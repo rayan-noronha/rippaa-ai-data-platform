@@ -8,11 +8,14 @@ import structlog
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from prometheus_client import Counter, Histogram, generate_latest
+from sqlalchemy import text
 from starlette.responses import Response
 
 from src.shared.config import get_settings
-from src.shared.database import check_database_health
+from src.shared.database import check_database_health, get_engine
 from src.shared.models import HealthResponse
+from src.ingestion.s3_client import check_s3_health
+from src.ingestion.kafka_producer import check_kafka_health
 
 logger = structlog.get_logger(__name__)
 
@@ -105,14 +108,24 @@ async def metrics_middleware(request: Request, call_next: object) -> Response:
 async def health_check() -> HealthResponse:
     """Check service health and dependency status."""
     db_healthy = check_database_health()
+    kafka_healthy = check_kafka_health()
+    s3_healthy = check_s3_health()
 
     dependencies = {
         "postgres": "healthy" if db_healthy else "unhealthy",
-        "kafka": "unknown",  # TODO: Implement Kafka health check
-        "s3": "unknown",  # TODO: Implement S3 health check
+        "kafka": "healthy" if kafka_healthy else "unhealthy",
+        "s3": "healthy" if s3_healthy else "unhealthy",
     }
 
-    overall = "healthy" if db_healthy else "degraded"
+    all_healthy = all(v == "healthy" for v in dependencies.values())
+    any_healthy = any(v == "healthy" for v in dependencies.values())
+
+    if all_healthy:
+        overall = "healthy"
+    elif any_healthy:
+        overall = "degraded"
+    else:
+        overall = "unhealthy"
 
     return HealthResponse(
         status=overall,
@@ -130,19 +143,38 @@ async def metrics() -> Response:
 @app.post("/ingest")
 async def ingest_document() -> dict[str, str]:
     """Submit a document for processing."""
-    # TODO: Implement in Phase 1
-    return {"status": "not_implemented", "message": "Document ingestion coming in Phase 1"}
+    return {"status": "not_implemented", "message": "Use scripts/ingest_documents.py for batch ingestion"}
 
 
 @app.post("/query")
 async def query_knowledge_base() -> dict[str, str]:
     """Query the knowledge base using agentic RAG."""
-    # TODO: Implement in Phase 3
     return {"status": "not_implemented", "message": "Agentic RAG query coming in Phase 3"}
 
 
 @app.get("/documents")
-async def list_documents() -> dict[str, str]:
+async def list_documents() -> list[dict]:
     """List all ingested documents and their processing status."""
-    # TODO: Implement in Phase 1
-    return {"status": "not_implemented", "message": "Document listing coming in Phase 1"}
+    engine = get_engine()
+    with engine.connect() as conn:
+        result = conn.execute(
+            text("""
+                SELECT id, filename, source_domain, file_type, file_size_bytes, status, ingested_at
+                FROM documents
+                ORDER BY ingested_at DESC
+                LIMIT 100
+            """)
+        )
+        documents = [
+            {
+                "id": str(row.id),
+                "filename": row.filename,
+                "source_domain": row.source_domain,
+                "file_type": row.file_type,
+                "file_size_bytes": row.file_size_bytes,
+                "status": row.status,
+                "ingested_at": row.ingested_at.isoformat() if row.ingested_at else None,
+            }
+            for row in result
+        ]
+    return documents
