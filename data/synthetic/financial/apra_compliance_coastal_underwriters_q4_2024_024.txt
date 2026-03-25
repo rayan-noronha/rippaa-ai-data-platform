@@ -1,0 +1,62 @@
+PRUDENTIAL COMPLIANCE REPORT
+Australian Prudential Regulation Authority (APRA)
+
+Reporting Entity: Coastal Underwriters
+ABN: 48 564 174 805
+APRA Registration: INS-17852
+Reporting Period: Q4 2024
+Submitted: 24/03/2026
+Prepared by: Robert Torres — Chief Risk Officer
+Contact: rodney65@example.com
+
+1. CAPITAL ADEQUACY (CPS 110)
+
+Prescribed Capital Amount (PCA): $90 million
+Capital Base: $172 million
+Capital Adequacy Ratio: 203%
+Minimum requirement: 100%
+Status: COMPLIANT
+
+2. RISK MANAGEMENT (CPS 220)
+
+Risk Management Framework: Reviewed June 2025
+Key risks identified:
+- Cyber security threats (rating: Medium)
+- Climate-related financial risks (rating: Medium)
+- Concentration risk in residential property portfolio (rating: Medium)
+
+Board Risk Committee meetings held: 9
+Risk appetite breaches: 1
+
+3. INFORMATION SECURITY (CPS 234)
+
+Information security incidents reported: 2
+Critical vulnerabilities identified: 2
+Penetration testing completed: No
+Third-party security assessments: 3 completed
+
+4. GOVERNANCE (CPS 510)
+
+Board composition:
+- Independent directors: 6
+- Executive directors: 1
+- Board meetings held: 12
+
+Fit and proper assessments: All directors current
+Conflict of interest declarations: Up to date
+
+5. OUTSOURCING (CPS 231)
+
+Material outsourcing arrangements: 4
+Offshore arrangements: 0
+All arrangements within risk appetite: No — remediation plan in place
+
+6. DECLARATION
+
+I, Eric Meyer, CEO of Coastal Underwriters, declare that to the best of my knowledge,
+the information contained in this report is accurate and complete.
+
+Signed: [Digital signature]
+Date: 24/03/2026
+
+Medicare Number on file for CEO verification: 3980 71141 2

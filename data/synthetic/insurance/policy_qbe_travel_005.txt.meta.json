@@ -1,0 +1,14 @@
+{
+  "id": "0e76d424-036b-428e-af90-f0a70f463612",
+  "filename": "policy_qbe_travel_005.txt",
+  "source_domain": "insurance",
+  "file_type": "txt",
+  "metadata": {
+    "policy_type": "Travel",
+    "insurer": "QBE",
+    "effective_date": "2025-01-18",
+    "expiry_date": "2026-01-18",
+    "policyholder": "Jennifer Robinson"
+  },
+  "generated_at": "2026-03-25T10:56:45.931665"
+}

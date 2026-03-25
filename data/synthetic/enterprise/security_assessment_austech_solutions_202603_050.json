@@ -1,0 +1,128 @@
+{
+  "assessment_type": "Annual Security Review",
+  "company": "AusTech Solutions",
+  "abn": "25 112 163 950",
+  "assessment_date": "2026-03-24",
+  "assessor": "Karen Dickerson \u2014 Tesserent",
+  "overall_rating": "Satisfactory",
+  "findings": [
+    {
+      "finding_id": "SEC-7438",
+      "severity": "Medium",
+      "title": "Missing WAF configuration",
+      "description": "Voluptates architecto vero quidem at illum totam. Cupiditate iure necessitatibus totam dicta rerum.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Mollitia aliquam repudiandae rerum esse nam iure ad a.",
+      "status": "Remediated",
+      "assigned_to": "Tyler Flowers",
+      "assigned_email": "qmartinez@example.com"
+    },
+    {
+      "finding_id": "SEC-4827",
+      "severity": "Critical",
+      "title": "Excessive IAM permissions",
+      "description": "Laudantium porro doloribus blanditiis. Laudantium voluptas nisi facere laboriosam.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Sit occaecati labore possimus blanditiis maiores nemo sapiente cum animi eum.",
+      "status": "Open",
+      "assigned_to": "Brandy Martin",
+      "assigned_email": "michael50@example.com"
+    },
+    {
+      "finding_id": "SEC-3546",
+      "severity": "Critical",
+      "title": "Missing MFA on admin accounts",
+      "description": "Odit asperiores deserunt occaecati quisquam nisi cumque.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Sit repudiandae placeat error placeat porro atque neque reprehenderit accusamus.",
+      "status": "Accepted Risk",
+      "assigned_to": "Jacqueline Washington",
+      "assigned_email": "samantha21@example.org"
+    },
+    {
+      "finding_id": "SEC-6145",
+      "severity": "Low",
+      "title": "Weak password policy enforcement",
+      "description": "Dolore deleniti tempore nostrum rerum minima minus.",
+      "affected_system": "Database Tier",
+      "remediation": "Praesentium rem impedit totam blanditiis consectetur accusantium expedita porro consequuntur ipsam voluptates minima.",
+      "status": "Remediated",
+      "assigned_to": "Carrie Torres",
+      "assigned_email": "walkermelissa@example.org"
+    },
+    {
+      "finding_id": "SEC-4401",
+      "severity": "Low",
+      "title": "Unencrypted data at rest",
+      "description": "Commodi consectetur aspernatur porro quos.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Accusantium laborum inventore deserunt adipisci optio.",
+      "status": "Remediated",
+      "assigned_to": "Julie Kerr",
+      "assigned_email": "joneselizabeth@example.org"
+    },
+    {
+      "finding_id": "SEC-2964",
+      "severity": "Critical",
+      "title": "Missing MFA on admin accounts",
+      "description": "Dignissimos temporibus delectus expedita at sapiente velit veniam.",
+      "affected_system": "Corporate Network",
+      "remediation": "Explicabo sequi quos nostrum magnam architecto reprehenderit quis minus quaerat.",
+      "status": "Open",
+      "assigned_to": "Carolyn Webster",
+      "assigned_email": "beltrancorey@example.org"
+    },
+    {
+      "finding_id": "SEC-4522",
+      "severity": "Medium",
+      "title": "Missing MFA on admin accounts",
+      "description": "Facilis nihil ipsam vero debitis explicabo fugit. Maiores illum quis et iure.",
+      "affected_system": "AWS Production",
+      "remediation": "Consequatur quis provident nam aliquam eveniet blanditiis eligendi nobis est voluptate ipsam.",
+      "status": "In Progress",
+      "assigned_to": "Donna Wyatt",
+      "assigned_email": "melissajacobson@example.com"
+    },
+    {
+      "finding_id": "SEC-6828",
+      "severity": "Low",
+      "title": "Open S3 bucket detected",
+      "description": "Accusamus perferendis perferendis id. Omnis assumenda corporis id nihil aut unde.",
+      "affected_system": "AWS Production",
+      "remediation": "Aperiam voluptate excepturi nisi voluptatibus commodi saepe quam.",
+      "status": "Remediated",
+      "assigned_to": "Micheal Perkins",
+      "assigned_email": "katelyn65@example.com"
+    },
+    {
+      "finding_id": "SEC-5262",
+      "severity": "High",
+      "title": "Unpatched production servers",
+      "description": "Voluptates maiores corporis iste commodi laudantium. Occaecati consequatur aut amet architecto.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Voluptas fugit perspiciatis corrupti numquam atque.",
+      "status": "Accepted Risk",
+      "assigned_to": "Paul Saunders",
+      "assigned_email": "qharris@example.com"
+    },
+    {
+      "finding_id": "SEC-5093",
+      "severity": "Critical",
+      "title": "Insufficient logging and monitoring",
+      "description": "Ea exercitationem similique molestias veritatis adipisci inventore. Fugit et fugiat itaque.",
+      "affected_system": "AWS Production",
+      "remediation": "Debitis optio quod suscipit cum inventore.",
+      "status": "In Progress",
+      "assigned_to": "James Gallagher",
+      "assigned_email": "rkeller@example.net"
+    }
+  ],
+  "summary": {
+    "total_findings": 10,
+    "critical": 4,
+    "high": 1,
+    "medium": 2,
+    "low": 3
+  },
+  "next_review": "2027-03-24"
+}

@@ -1,0 +1,132 @@
+{
+  "assessment_date": "2026-03-24",
+  "assessor": "Laura Cunningham",
+  "entity": "Southern Cross Financial Services",
+  "abn": "26 199 503 482",
+  "risks": [
+    {
+      "risk_id": "RSK-5061",
+      "category": "Liquidity",
+      "description": "Nesciunt ab voluptatum vitae saepe natus nisi eligendi placeat laboriosam excepturi.",
+      "likelihood": "Unlikely",
+      "impact": "Insignificant",
+      "risk_rating": "Low",
+      "owner": "Frederick Hill",
+      "owner_email": "jacob83@example.org",
+      "mitigation": "Illo eum consequuntur ad libero eos tenetur illo qui nesciunt.",
+      "review_date": "2026-03-24",
+      "status": "Accepted"
+    },
+    {
+      "risk_id": "RSK-7850",
+      "category": "Liquidity",
+      "description": "Exercitationem quae placeat odit labore velit facere error.",
+      "likelihood": "Unlikely",
+      "impact": "Minor",
+      "risk_rating": "High",
+      "owner": "Matthew Grant",
+      "owner_email": "connor24@example.net",
+      "mitigation": "Quis delectus perspiciatis excepturi at explicabo quia esse ratione ex.",
+      "review_date": "2026-03-24",
+      "status": "Accepted"
+    },
+    {
+      "risk_id": "RSK-3610",
+      "category": "Credit",
+      "description": "Eos sed iusto sint nesciunt velit architecto suscipit magnam sint fugit error amet.",
+      "likelihood": "Likely",
+      "impact": "Catastrophic",
+      "risk_rating": "Critical",
+      "owner": "Brenda Gonzalez",
+      "owner_email": "dbenitez@example.org",
+      "mitigation": "Similique debitis aspernatur ex voluptates et animi iste.",
+      "review_date": "2026-03-24",
+      "status": "Transferred"
+    },
+    {
+      "risk_id": "RSK-9148",
+      "category": "Market",
+      "description": "Nemo culpa quos quod consectetur inventore inventore inventore.",
+      "likelihood": "Rare",
+      "impact": "Insignificant",
+      "risk_rating": "Critical",
+      "owner": "Aaron Ferguson",
+      "owner_email": "stephanie58@example.org",
+      "mitigation": "Perspiciatis occaecati dolorum possimus.",
+      "review_date": "2026-03-24",
+      "status": "Transferred"
+    },
+    {
+      "risk_id": "RSK-4524",
+      "category": "Credit",
+      "description": "Consectetur fugit nihil cumque reprehenderit error enim quas nisi.",
+      "likelihood": "Almost Certain",
+      "impact": "Moderate",
+      "risk_rating": "Low",
+      "owner": "Stephen Cowan",
+      "owner_email": "wendy75@example.org",
+      "mitigation": "Veniam ullam illo dolorem quas consectetur.",
+      "review_date": "2026-03-24",
+      "status": "Open"
+    },
+    {
+      "risk_id": "RSK-9108",
+      "category": "Market",
+      "description": "Magnam commodi quae recusandae fugiat odit quo numquam nisi aliquid autem saepe aliquid.",
+      "likelihood": "Almost Certain",
+      "impact": "Major",
+      "risk_rating": "High",
+      "owner": "Jeremy Martinez",
+      "owner_email": "thomas23@example.net",
+      "mitigation": "Ab in aut maxime numquam praesentium in tempore maiores nulla eligendi.",
+      "review_date": "2026-03-24",
+      "status": "Open"
+    },
+    {
+      "risk_id": "RSK-8060",
+      "category": "Operational",
+      "description": "Dicta dicta ea minima dicta provident eos aliquam libero dignissimos ut ex.",
+      "likelihood": "Unlikely",
+      "impact": "Moderate",
+      "risk_rating": "High",
+      "owner": "Michael Meadows",
+      "owner_email": "fhernandez@example.net",
+      "mitigation": "Quam aut ducimus doloremque voluptates.",
+      "review_date": "2026-03-24",
+      "status": "Transferred"
+    },
+    {
+      "risk_id": "RSK-1741",
+      "category": "Market",
+      "description": "Iure aut cupiditate aliquam enim reiciendis est qui atque.",
+      "likelihood": "Likely",
+      "impact": "Insignificant",
+      "risk_rating": "Medium",
+      "owner": "Amber Christian",
+      "owner_email": "markkline@example.net",
+      "mitigation": "Soluta at repellendus delectus id vitae earum.",
+      "review_date": "2026-03-24",
+      "status": "Accepted"
+    },
+    {
+      "risk_id": "RSK-5728",
+      "category": "Cyber",
+      "description": "Reiciendis officiis reiciendis beatae possimus animi velit cum impedit nihil rem perspiciatis.",
+      "likelihood": "Rare",
+      "impact": "Major",
+      "risk_rating": "Critical",
+      "owner": "James Howard",
+      "owner_email": "huffmannichole@example.net",
+      "mitigation": "Laboriosam laborum suscipit ipsam aperiam omnis.",
+      "review_date": "2026-03-24",
+      "status": "Accepted"
+    }
+  ],
+  "summary": {
+    "total_risks": 9,
+    "critical": 3,
+    "high": 3,
+    "medium": 1,
+    "low": 2
+  }
+}

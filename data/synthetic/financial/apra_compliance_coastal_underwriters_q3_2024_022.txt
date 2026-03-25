@@ -1,0 +1,62 @@
+PRUDENTIAL COMPLIANCE REPORT
+Australian Prudential Regulation Authority (APRA)
+
+Reporting Entity: Coastal Underwriters
+ABN: 69 796 629 452
+APRA Registration: INS-26821
+Reporting Period: Q3 2024
+Submitted: 24/03/2026
+Prepared by: Ryan Green — Chief Risk Officer
+Contact: mitchellpaul@example.org
+
+1. CAPITAL ADEQUACY (CPS 110)
+
+Prescribed Capital Amount (PCA): $191 million
+Capital Base: $223 million
+Capital Adequacy Ratio: 225%
+Minimum requirement: 100%
+Status: COMPLIANT
+
+2. RISK MANAGEMENT (CPS 220)
+
+Risk Management Framework: Reviewed February 2026
+Key risks identified:
+- Cyber security threats (rating: High)
+- Climate-related financial risks (rating: High)
+- Concentration risk in residential property portfolio (rating: Low)
+
+Board Risk Committee meetings held: 12
+Risk appetite breaches: 0
+
+3. INFORMATION SECURITY (CPS 234)
+
+Information security incidents reported: 0
+Critical vulnerabilities identified: 2
+Penetration testing completed: Yes
+Third-party security assessments: 3 completed
+
+4. GOVERNANCE (CPS 510)
+
+Board composition:
+- Independent directors: 4
+- Executive directors: 1
+- Board meetings held: 8
+
+Fit and proper assessments: All directors current
+Conflict of interest declarations: Up to date
+
+5. OUTSOURCING (CPS 231)
+
+Material outsourcing arrangements: 7
+Offshore arrangements: 1
+All arrangements within risk appetite: No — remediation plan in place
+
+6. DECLARATION
+
+I, Traci Vincent, CEO of Coastal Underwriters, declare that to the best of my knowledge,
+the information contained in this report is accurate and complete.
+
+Signed: [Digital signature]
+Date: 24/03/2026
+
+Medicare Number on file for CEO verification: 6250 47230 2

@@ -1,0 +1,58 @@
+UNDERWRITING GUIDELINES — Commercial Property
+Version: 2.5
+Last Updated: 22 October 2025
+Classification: INTERNAL — CONFIDENTIAL
+
+1. RISK ASSESSMENT CRITERIA
+
+1.1 Acceptable Risks
+- Commercial Property policies for properties valued between $100,000 and $1,500,000
+- Property age: less than 80 years (or with recent structural inspection)
+- Claims history: maximum 2 claims in the last 5 years
+- Location: all Australian states and territories
+
+1.2 Declined Risks
+- Properties in designated flood zones without mitigation
+- Buildings with known asbestos (unless removal plan documented)
+- Properties with more than 3 claims in 3 years
+- Commercial properties with hazardous materials storage
+
+1.3 Referred Risks (require senior underwriter approval)
+- Properties valued above $1,500,000
+- Heritage-listed buildings
+- Properties in bushfire-prone areas (BAL rating FZ)
+- Strata properties with known building defects
+
+2. PRICING MATRIX
+
+Base premium rates per $1,000 of coverage:
+- Low risk (metro, new build, no claims): $1.20
+- Medium risk (regional, 10-30yr old, 1 claim): $2.45
+- High risk (rural, 30yr+, 2 claims): $4.80
+- Very high risk (referred): Individual assessment required
+
+Minimum premium: $350 per annum
+Maximum discount: 25% (loyalty + no claims + multi-policy)
+
+3. APPROVAL AUTHORITY
+
+| Coverage Amount | Approval Level |
+|---|---|
+| Up to $500,000 | Underwriter |
+| $500,001 — $1,000,000 | Senior Underwriter |
+| $1,000,001 — $1,500,000 | Underwriting Manager |
+| Above $1,500,000 | Chief Underwriter |
+
+4. DOCUMENTATION REQUIREMENTS
+
+For all new policies:
+- Completed application form
+- Proof of ownership or insurable interest
+- Recent property valuation (within 12 months)
+- Building inspection report (for properties over 40 years)
+- Claims history declaration
+
+Contact: Underwriting Team
+Email: underwriting@raainsurance.com.au
+Phone: 08 8202 6933
+ABN: 59 680 133 719

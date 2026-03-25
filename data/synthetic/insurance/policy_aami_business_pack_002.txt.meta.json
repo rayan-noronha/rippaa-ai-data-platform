@@ -1,0 +1,14 @@
+{
+  "id": "e43f329a-19ed-40ea-8b35-28e4af4aec08",
+  "filename": "policy_aami_business_pack_002.txt",
+  "source_domain": "insurance",
+  "file_type": "txt",
+  "metadata": {
+    "policy_type": "Business Pack",
+    "insurer": "AAMI",
+    "effective_date": "2024-05-29",
+    "expiry_date": "2025-05-29",
+    "policyholder": "Tyler Rogers"
+  },
+  "generated_at": "2026-03-25T10:56:45.927193"
+}

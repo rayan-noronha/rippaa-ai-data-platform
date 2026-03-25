@@ -1,0 +1,12 @@
+{
+  "id": "6e9a4bed-df2f-41ff-884d-18767d7ce110",
+  "filename": "claims_report_q2_2025_012.csv",
+  "source_domain": "insurance",
+  "file_type": "csv",
+  "metadata": {
+    "report_type": "claims_register",
+    "total_claims": 37,
+    "period": "Q4 2023"
+  },
+  "generated_at": "2026-03-25T10:56:45.984698"
+}

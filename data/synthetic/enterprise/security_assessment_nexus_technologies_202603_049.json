@@ -1,0 +1,95 @@
+{
+  "assessment_type": "Annual Security Review",
+  "company": "Nexus Technologies",
+  "abn": "65 778 233 342",
+  "assessment_date": "2026-03-24",
+  "assessor": "Linda Thomas \u2014 Deloitte Cyber",
+  "overall_rating": "Needs Improvement",
+  "findings": [
+    {
+      "finding_id": "SEC-1391",
+      "severity": "High",
+      "title": "Open S3 bucket detected",
+      "description": "Molestiae recusandae ratione aspernatur sunt quasi amet veniam.",
+      "affected_system": "Corporate Network",
+      "remediation": "Suscipit beatae facilis nulla facilis cupiditate nam architecto quae dignissimos.",
+      "status": "Open",
+      "assigned_to": "Mrs. Ashley Mendoza",
+      "assigned_email": "karenhodges@example.com"
+    },
+    {
+      "finding_id": "SEC-6488",
+      "severity": "Critical",
+      "title": "Outdated SSL certificates",
+      "description": "Magnam in amet fuga iste. Minima commodi quae perspiciatis minus eos numquam.",
+      "affected_system": "Corporate Network",
+      "remediation": "Deleniti sunt assumenda hic debitis vero.",
+      "status": "Open",
+      "assigned_to": "Christopher Rodriguez",
+      "assigned_email": "tylergolden@example.net"
+    },
+    {
+      "finding_id": "SEC-4361",
+      "severity": "Informational",
+      "title": "Excessive IAM permissions",
+      "description": "Eos voluptas molestiae. Labore in qui accusantium.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Aperiam sit doloremque veniam officia illum exercitationem officia.",
+      "status": "Accepted Risk",
+      "assigned_to": "Kevin Terry",
+      "assigned_email": "kellis@example.org"
+    },
+    {
+      "finding_id": "SEC-1981",
+      "severity": "High",
+      "title": "Unencrypted data at rest",
+      "description": "Ratione dolorem fuga enim.",
+      "affected_system": "AWS Production",
+      "remediation": "Corporis eligendi vero nulla cum modi.",
+      "status": "Open",
+      "assigned_to": "Christopher Erickson",
+      "assigned_email": "evanwilson@example.com"
+    },
+    {
+      "finding_id": "SEC-4792",
+      "severity": "Informational",
+      "title": "Outdated SSL certificates",
+      "description": "Ipsam fuga dignissimos provident. Voluptatem corporis ipsum voluptate modi commodi.",
+      "affected_system": "Corporate Network",
+      "remediation": "Illo libero corporis itaque eum a.",
+      "status": "Accepted Risk",
+      "assigned_to": "Vanessa Rivera",
+      "assigned_email": "thomas49@example.net"
+    },
+    {
+      "finding_id": "SEC-2391",
+      "severity": "Informational",
+      "title": "Weak password policy enforcement",
+      "description": "Quas ullam excepturi beatae laboriosam aliquam perspiciatis.",
+      "affected_system": "Database Tier",
+      "remediation": "Est illo sapiente ipsum at animi odit.",
+      "status": "In Progress",
+      "assigned_to": "Courtney Walls",
+      "assigned_email": "james18@example.com"
+    },
+    {
+      "finding_id": "SEC-7461",
+      "severity": "Critical",
+      "title": "No network segmentation between environments",
+      "description": "Hic laudantium nobis maiores animi pariatur id.",
+      "affected_system": "Database Tier",
+      "remediation": "Fuga fuga eligendi expedita voluptate soluta assumenda quas ipsam voluptatibus rem.",
+      "status": "Open",
+      "assigned_to": "Robert Waller",
+      "assigned_email": "achandler@example.org"
+    }
+  ],
+  "summary": {
+    "total_findings": 7,
+    "critical": 2,
+    "high": 2,
+    "medium": 0,
+    "low": 0
+  },
+  "next_review": "2027-03-24"
+}

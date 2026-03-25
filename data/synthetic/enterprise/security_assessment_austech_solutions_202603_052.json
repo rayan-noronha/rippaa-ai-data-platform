@@ -1,0 +1,84 @@
+{
+  "assessment_type": "Annual Security Review",
+  "company": "AusTech Solutions",
+  "abn": "99 467 705 128",
+  "assessment_date": "2026-03-24",
+  "assessor": "Erika Dennis \u2014 Deloitte Cyber",
+  "overall_rating": "Unsatisfactory",
+  "findings": [
+    {
+      "finding_id": "SEC-9231",
+      "severity": "Medium",
+      "title": "Outdated SSL certificates",
+      "description": "Unde officia occaecati.",
+      "affected_system": "Corporate Network",
+      "remediation": "Voluptate dicta praesentium cumque id inventore ea.",
+      "status": "In Progress",
+      "assigned_to": "Jacob Valentine",
+      "assigned_email": "smithalicia@example.com"
+    },
+    {
+      "finding_id": "SEC-1427",
+      "severity": "Medium",
+      "title": "No network segmentation between environments",
+      "description": "Dolore dicta veniam repellendus. Enim laudantium consectetur sequi nobis.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Quas deleniti debitis recusandae adipisci voluptate doloremque iste dolorum.",
+      "status": "Open",
+      "assigned_to": "Maria Miller",
+      "assigned_email": "uanderson@example.net"
+    },
+    {
+      "finding_id": "SEC-5602",
+      "severity": "Critical",
+      "title": "Insufficient logging and monitoring",
+      "description": "Quae provident quasi ducimus atque. Amet ut iusto explicabo.",
+      "affected_system": "Database Tier",
+      "remediation": "Vel voluptas nisi quibusdam aliquid ducimus nulla esse hic fuga voluptas nam neque.",
+      "status": "Remediated",
+      "assigned_to": "Jonathan Conrad",
+      "assigned_email": "uanderson@example.net"
+    },
+    {
+      "finding_id": "SEC-4813",
+      "severity": "High",
+      "title": "Weak password policy enforcement",
+      "description": "Consequuntur blanditiis aliquid consectetur sit rerum. Unde eligendi soluta nostrum quis eaque.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Ipsa cumque qui laudantium veniam nam ullam odio ipsam deleniti.",
+      "status": "In Progress",
+      "assigned_to": "Clifford Harrison",
+      "assigned_email": "janicegraham@example.com"
+    },
+    {
+      "finding_id": "SEC-5366",
+      "severity": "Informational",
+      "title": "Unpatched production servers",
+      "description": "Explicabo quae laborum laudantium sapiente sint.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Expedita dignissimos eligendi rerum quibusdam reprehenderit natus.",
+      "status": "Accepted Risk",
+      "assigned_to": "Christy Bolton",
+      "assigned_email": "foxashley@example.com"
+    },
+    {
+      "finding_id": "SEC-6813",
+      "severity": "High",
+      "title": "Missing MFA on admin accounts",
+      "description": "Quisquam perspiciatis suscipit ad perspiciatis.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Hic nihil veritatis saepe corrupti aspernatur rerum.",
+      "status": "Remediated",
+      "assigned_to": "Jordan Moses",
+      "assigned_email": "riverabradley@example.net"
+    }
+  ],
+  "summary": {
+    "total_findings": 6,
+    "critical": 1,
+    "high": 2,
+    "medium": 2,
+    "low": 0
+  },
+  "next_review": "2027-03-24"
+}

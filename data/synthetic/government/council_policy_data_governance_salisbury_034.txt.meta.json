@@ -1,0 +1,14 @@
+{
+  "id": "c0c4a782-f278-4cda-950a-5929f2950c93",
+  "filename": "council_policy_data_governance_salisbury_034.txt",
+  "source_domain": "government",
+  "file_type": "txt",
+  "metadata": {
+    "document_type": "council_policy",
+    "policy_area": "Data Governance",
+    "council": "City of Salisbury",
+    "approval_date": "2025-10-05",
+    "is_stale": false
+  },
+  "generated_at": "2026-03-25T10:56:46.077127"
+}

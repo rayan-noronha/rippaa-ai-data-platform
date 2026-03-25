@@ -1,0 +1,80 @@
+{
+  "assessment_date": "2026-03-24",
+  "assessor": "Wayne Malone",
+  "entity": "Southern Cross Financial Services",
+  "abn": "17 948 660 617",
+  "risks": [
+    {
+      "risk_id": "RSK-2936",
+      "category": "Climate",
+      "description": "Consequatur veniam molestiae nihil itaque quibusdam soluta ipsa odit modi tenetur.",
+      "likelihood": "Likely",
+      "impact": "Moderate",
+      "risk_rating": "Medium",
+      "owner": "Mr. Brandon Parker",
+      "owner_email": "tgreen@example.org",
+      "mitigation": "Minima quis consequatur enim.",
+      "review_date": "2026-03-24",
+      "status": "Transferred"
+    },
+    {
+      "risk_id": "RSK-9233",
+      "category": "Climate",
+      "description": "Porro laudantium quidem error quisquam reiciendis.",
+      "likelihood": "Possible",
+      "impact": "Insignificant",
+      "risk_rating": "High",
+      "owner": "Rebecca Kelley",
+      "owner_email": "robertcastro@example.com",
+      "mitigation": "Cum qui harum fugiat ea in dolores.",
+      "review_date": "2026-03-24",
+      "status": "Accepted"
+    },
+    {
+      "risk_id": "RSK-4618",
+      "category": "Cyber",
+      "description": "Eligendi quia repellat impedit sequi delectus enim odio nulla.",
+      "likelihood": "Unlikely",
+      "impact": "Minor",
+      "risk_rating": "Critical",
+      "owner": "Marcus Lopez",
+      "owner_email": "hernandeztara@example.org",
+      "mitigation": "Voluptas eligendi commodi ipsa ab at.",
+      "review_date": "2026-03-24",
+      "status": "Mitigated"
+    },
+    {
+      "risk_id": "RSK-7121",
+      "category": "Liquidity",
+      "description": "Dolor in ratione libero fuga possimus adipisci aspernatur quibusdam corporis eaque hic.",
+      "likelihood": "Likely",
+      "impact": "Catastrophic",
+      "risk_rating": "Critical",
+      "owner": "Catherine Huang",
+      "owner_email": "lisa01@example.net",
+      "mitigation": "Harum voluptate doloribus voluptatum dicta quasi atque.",
+      "review_date": "2026-03-24",
+      "status": "Mitigated"
+    },
+    {
+      "risk_id": "RSK-2341",
+      "category": "Credit",
+      "description": "Harum vero vel culpa quas quia mollitia commodi laboriosam error facere amet.",
+      "likelihood": "Almost Certain",
+      "impact": "Major",
+      "risk_rating": "High",
+      "owner": "Valerie Young",
+      "owner_email": "knguyen@example.com",
+      "mitigation": "Blanditiis ratione ab aliquam quos labore nisi fuga at culpa.",
+      "review_date": "2026-03-24",
+      "status": "Open"
+    }
+  ],
+  "summary": {
+    "total_risks": 5,
+    "critical": 2,
+    "high": 2,
+    "medium": 1,
+    "low": 0
+  }
+}

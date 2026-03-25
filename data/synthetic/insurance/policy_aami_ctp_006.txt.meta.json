@@ -1,0 +1,14 @@
+{
+  "id": "5088d940-9149-4a7e-9cea-6bd9f4502a94",
+  "filename": "policy_aami_ctp_006.txt",
+  "source_domain": "insurance",
+  "file_type": "txt",
+  "metadata": {
+    "policy_type": "CTP",
+    "insurer": "AAMI",
+    "effective_date": "2024-05-12",
+    "expiry_date": "2025-05-12",
+    "policyholder": "Gina Carter"
+  },
+  "generated_at": "2026-03-25T10:56:45.933619"
+}

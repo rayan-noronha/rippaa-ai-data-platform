@@ -1,0 +1,128 @@
+{
+  "assessment_type": "Annual Security Review",
+  "company": "Nexus Technologies",
+  "abn": "58 900 830 467",
+  "assessment_date": "2026-03-24",
+  "assessor": "Theresa Wilkerson \u2014 PwC Digital Trust",
+  "overall_rating": "Unsatisfactory",
+  "findings": [
+    {
+      "finding_id": "SEC-7563",
+      "severity": "Medium",
+      "title": "Weak password policy enforcement",
+      "description": "Ea nihil fugiat perspiciatis quisquam eligendi.",
+      "affected_system": "Database Tier",
+      "remediation": "Adipisci aliquid saepe expedita quia ad.",
+      "status": "Remediated",
+      "assigned_to": "Gloria Davis",
+      "assigned_email": "victoria65@example.org"
+    },
+    {
+      "finding_id": "SEC-2228",
+      "severity": "Critical",
+      "title": "Weak password policy enforcement",
+      "description": "Doloremque est assumenda porro sit.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Excepturi accusantium eveniet itaque sint necessitatibus temporibus.",
+      "status": "Accepted Risk",
+      "assigned_to": "Michael Chapman",
+      "assigned_email": "nicholas65@example.net"
+    },
+    {
+      "finding_id": "SEC-3110",
+      "severity": "Critical",
+      "title": "Missing WAF configuration",
+      "description": "Aut perferendis excepturi magnam quisquam excepturi nostrum.",
+      "affected_system": "AWS Production",
+      "remediation": "Voluptas dicta odio voluptate asperiores sed distinctio eaque error nemo.",
+      "status": "Open",
+      "assigned_to": "Lori Rubio",
+      "assigned_email": "vargasjoshua@example.net"
+    },
+    {
+      "finding_id": "SEC-8552",
+      "severity": "Critical",
+      "title": "Missing MFA on admin accounts",
+      "description": "Incidunt expedita asperiores reprehenderit magnam error optio. Dicta illo numquam iste quis debitis.",
+      "affected_system": "Database Tier",
+      "remediation": "Occaecati maiores delectus libero optio reprehenderit.",
+      "status": "Accepted Risk",
+      "assigned_to": "Debra Little",
+      "assigned_email": "umichael@example.net"
+    },
+    {
+      "finding_id": "SEC-7471",
+      "severity": "Low",
+      "title": "Unpatched production servers",
+      "description": "Dicta iure dolores quia quisquam sapiente illum.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Odio sapiente eaque enim cum porro.",
+      "status": "Accepted Risk",
+      "assigned_to": "David Hernandez",
+      "assigned_email": "sanchezmargaret@example.com"
+    },
+    {
+      "finding_id": "SEC-3831",
+      "severity": "Medium",
+      "title": "Excessive IAM permissions",
+      "description": "Voluptatibus in temporibus dicta earum adipisci ratione. Omnis debitis sequi vitae laborum.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Animi tempore et error aperiam veritatis.",
+      "status": "Remediated",
+      "assigned_to": "Megan Blackwell",
+      "assigned_email": "uhahn@example.org"
+    },
+    {
+      "finding_id": "SEC-5585",
+      "severity": "Low",
+      "title": "Missing MFA on admin accounts",
+      "description": "Necessitatibus magnam blanditiis optio.",
+      "affected_system": "AWS Production",
+      "remediation": "Veniam ut dolorum sunt dolores commodi rem eveniet nesciunt harum quibusdam doloremque in.",
+      "status": "In Progress",
+      "assigned_to": "Christopher Booker",
+      "assigned_email": "lortiz@example.org"
+    },
+    {
+      "finding_id": "SEC-5835",
+      "severity": "Low",
+      "title": "Outdated SSL certificates",
+      "description": "Fugiat veniam et incidunt placeat vitae sunt. Facilis quaerat reprehenderit accusantium.",
+      "affected_system": "Database Tier",
+      "remediation": "Alias qui reiciendis amet totam perferendis ducimus harum odit praesentium temporibus placeat modi.",
+      "status": "Accepted Risk",
+      "assigned_to": "Jeremy Smith",
+      "assigned_email": "qpennington@example.com"
+    },
+    {
+      "finding_id": "SEC-1999",
+      "severity": "Critical",
+      "title": "Unencrypted data at rest",
+      "description": "Error similique cum ipsa et.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Ratione earum aspernatur quod laudantium qui unde ex in ullam aut.",
+      "status": "In Progress",
+      "assigned_to": "Dean Jones",
+      "assigned_email": "jguzman@example.net"
+    },
+    {
+      "finding_id": "SEC-7868",
+      "severity": "High",
+      "title": "Open S3 bucket detected",
+      "description": "Possimus quis odit delectus ipsam odit a. Occaecati et aspernatur culpa maiores.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Sed placeat recusandae eum laboriosam quasi ea.",
+      "status": "Open",
+      "assigned_to": "Samantha Marsh",
+      "assigned_email": "christopherrichardson@example.com"
+    }
+  ],
+  "summary": {
+    "total_findings": 10,
+    "critical": 4,
+    "high": 1,
+    "medium": 2,
+    "low": 3
+  },
+  "next_review": "2027-03-24"
+}

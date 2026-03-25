@@ -1,0 +1,11 @@
+claim_id,policy_number,claimant,amount,status
+CLM-999001,RAA-100001,John Smith,15000.00,Approved
+CLM-999002,RAA-100002,"Jane O'Brien, Jr.",22500.00,Under Assessment
+CLM-999003,RAA-100003,Bob Wilson,amount_not_available,Pending
+CLM-999004,,Michael Chen,18000.00,Approved,extra_field_here
+CLM-999005,RAA-100005,Sarah   Johnson,,Declined
+,RAA-100006,David Lee,9500.00,Open
+CLM-999007,RAA-100007,"Lisa ""Liz"" Taylor",31000.00,Paid
+CLM-999008,RAA-100008,Test User,0,
+CLM-999009,RAA-100009,
+CLM-999010,RAA-100010,Emma Davis,45000.00,Approved

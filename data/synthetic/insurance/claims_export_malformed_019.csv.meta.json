@@ -1,0 +1,16 @@
+{
+  "id": "93be4eb0-34f7-4f2e-bd42-5f90c574b2a6",
+  "filename": "claims_export_malformed_019.csv",
+  "source_domain": "insurance",
+  "file_type": "csv_raw",
+  "metadata": {
+    "document_type": "malformed_data",
+    "issues": [
+      "misaligned_columns",
+      "missing_values",
+      "extra_fields",
+      "inconsistent_quoting"
+    ]
+  },
+  "generated_at": "2026-03-25T10:56:46.003263"
+}

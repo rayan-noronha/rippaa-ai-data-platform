@@ -1,0 +1,84 @@
+{
+  "assessment_type": "Annual Security Review",
+  "company": "Meridian Data Services",
+  "abn": "35 850 659 878",
+  "assessment_date": "2026-03-24",
+  "assessor": "Faith Johnson \u2014 Tesserent",
+  "overall_rating": "Satisfactory",
+  "findings": [
+    {
+      "finding_id": "SEC-5444",
+      "severity": "Critical",
+      "title": "No network segmentation between environments",
+      "description": "Aut sed nostrum quod.",
+      "affected_system": "Corporate Network",
+      "remediation": "Sunt aspernatur ab unde provident nisi.",
+      "status": "Open",
+      "assigned_to": "Michael Sparks",
+      "assigned_email": "nschwartz@example.org"
+    },
+    {
+      "finding_id": "SEC-9225",
+      "severity": "Critical",
+      "title": "Missing MFA on admin accounts",
+      "description": "Ipsum dolores cupiditate porro nisi quaerat nostrum.",
+      "affected_system": "Azure DevTest",
+      "remediation": "Occaecati quos expedita a doloremque blanditiis minus.",
+      "status": "Open",
+      "assigned_to": "Ivan Juarez",
+      "assigned_email": "stevensims@example.org"
+    },
+    {
+      "finding_id": "SEC-7568",
+      "severity": "Critical",
+      "title": "Insufficient logging and monitoring",
+      "description": "Deserunt recusandae placeat.",
+      "affected_system": "Corporate Network",
+      "remediation": "Libero cum ullam amet facilis distinctio dolorum nulla suscipit iste autem amet.",
+      "status": "Remediated",
+      "assigned_to": "Brooke Johnson",
+      "assigned_email": "jonesjoe@example.com"
+    },
+    {
+      "finding_id": "SEC-6362",
+      "severity": "Critical",
+      "title": "Open S3 bucket detected",
+      "description": "Eveniet dicta perspiciatis eveniet quod eveniet atque qui. Fugiat dolore iusto laborum tempora.",
+      "affected_system": "SaaS Applications",
+      "remediation": "Dolor non debitis fuga itaque deserunt facere.",
+      "status": "Open",
+      "assigned_to": "George Johnson",
+      "assigned_email": "ramirezdaniel@example.com"
+    },
+    {
+      "finding_id": "SEC-7044",
+      "severity": "High",
+      "title": "Unencrypted data at rest",
+      "description": "Cupiditate exercitationem suscipit nobis ratione odit. Temporibus neque mollitia dolorem illum maxime similique dolor.",
+      "affected_system": "Database Tier",
+      "remediation": "Saepe eius quas quasi doloribus eveniet neque tempora nihil corrupti nemo a.",
+      "status": "Remediated",
+      "assigned_to": "Amanda Ruiz",
+      "assigned_email": "simmonsphillip@example.net"
+    },
+    {
+      "finding_id": "SEC-4974",
+      "severity": "Low",
+      "title": "Missing WAF configuration",
+      "description": "Libero assumenda quidem possimus illum dolor facere.",
+      "affected_system": "Database Tier",
+      "remediation": "Officia at laboriosam esse provident similique quibusdam ad iste.",
+      "status": "Accepted Risk",
+      "assigned_to": "Shelly Sullivan",
+      "assigned_email": "courtney01@example.com"
+    }
+  ],
+  "summary": {
+    "total_findings": 6,
+    "critical": 4,
+    "high": 1,
+    "medium": 0,
+    "low": 1
+  },
+  "next_review": "2027-03-24"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "94fa77ac-a275-4a53-9482-32ee010b88ec",
+  "filename": "product_update_bulletin_017.txt",
+  "source_domain": "insurance",
+  "file_type": "txt",
+  "metadata": {
+    "document_type": "product_bulletin",
+    "conflicts_with": "underwriting_guidelines",
+    "new_max_coverage": 3000000
+  },
+  "generated_at": "2026-03-25T10:56:46.001514"
+}

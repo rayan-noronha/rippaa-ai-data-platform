@@ -1,0 +1,62 @@
+PRUDENTIAL COMPLIANCE REPORT
+Australian Prudential Regulation Authority (APRA)
+
+Reporting Entity: Pacific Re
+ABN: 26 740 410 729
+APRA Registration: INS-79924
+Reporting Period: Q3 2024
+Submitted: 24/03/2026
+Prepared by: Debra Ortiz — Chief Risk Officer
+Contact: hancocktammy@example.net
+
+1. CAPITAL ADEQUACY (CPS 110)
+
+Prescribed Capital Amount (PCA): $73 million
+Capital Base: $188 million
+Capital Adequacy Ratio: 232%
+Minimum requirement: 100%
+Status: COMPLIANT
+
+2. RISK MANAGEMENT (CPS 220)
+
+Risk Management Framework: Reviewed March 2025
+Key risks identified:
+- Cyber security threats (rating: High)
+- Climate-related financial risks (rating: High)
+- Concentration risk in residential property portfolio (rating: Medium)
+
+Board Risk Committee meetings held: 9
+Risk appetite breaches: 0
+
+3. INFORMATION SECURITY (CPS 234)
+
+Information security incidents reported: 0
+Critical vulnerabilities identified: 0
+Penetration testing completed: Yes
+Third-party security assessments: 3 completed
+
+4. GOVERNANCE (CPS 510)
+
+Board composition:
+- Independent directors: 4
+- Executive directors: 3
+- Board meetings held: 9
+
+Fit and proper assessments: All directors current
+Conflict of interest declarations: Up to date
+
+5. OUTSOURCING (CPS 231)
+
+Material outsourcing arrangements: 6
+Offshore arrangements: 0
+All arrangements within risk appetite: No — remediation plan in place
+
+6. DECLARATION
+
+I, Carlos Thompson, CEO of Pacific Re, declare that to the best of my knowledge,
+the information contained in this report is accurate and complete.
+
+Signed: [Digital signature]
+Date: 24/03/2026
+
+Medicare Number on file for CEO verification: 6469 47967 5

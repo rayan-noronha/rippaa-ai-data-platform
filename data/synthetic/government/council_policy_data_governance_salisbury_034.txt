@@ -1,0 +1,66 @@
+CITY OF SALISBURY
+COUNCIL POLICY
+
+Policy Title: Data Governance
+Policy Number: CP-574
+Version: 4.4
+Approval Date: 05 October 2025
+Next Review Date: 05 October 2027
+Responsible Officer: Walter Fuentes, Manager Governance
+Contact: alexandriajimenez@example.net
+Phone: 08 8406 4762
+
+1. PURPOSE
+
+This policy establishes the framework for data governance within City of Salisbury.
+It ensures transparency, accountability, and consistency in how the Council
+manages data governance processes.
+
+2. SCOPE
+
+This policy applies to:
+- All Council employees and contractors
+- Elected Members (where applicable)
+- Volunteers working on behalf of Council
+- Third-party service providers engaged by Council
+
+3. POLICY STATEMENT
+
+3.1 City of Salisbury is committed to best-practice data governance that delivers
+value to our community and meets all legislative requirements.
+
+3.2 All decisions under this policy must comply with:
+- Local Government Act 1999 (SA)
+- State Procurement Act 2004 (where applicable)
+- Council's Code of Conduct for Employees
+- Relevant Australian Standards
+
+3.3 Financial delegations apply as per Council's Financial Delegations Register.
+Expenditure above $25,000 requires
+Council approval.
+
+4. RESPONSIBILITIES
+
+| Role | Responsibility |
+|---|---|
+| Council | Approve policy and strategic direction |
+| CEO | Overall implementation and compliance |
+| Directors | Operational compliance within division |
+| Managers | Day-to-day implementation |
+| All Staff | Adhere to this policy |
+
+5. RELATED DOCUMENTS
+
+- Council Strategic Plan 2024-2028
+- Annual Business Plan
+- Risk Management Framework
+- Code of Conduct for Council Employees
+- Fraud and Corruption Prevention Policy
+
+6. REVIEW
+
+This policy will be reviewed every 2 year(s) or earlier
+if required by legislative changes.
+
+Document Owner: Douglas Ortiz
+ABN: 29 382 293 996

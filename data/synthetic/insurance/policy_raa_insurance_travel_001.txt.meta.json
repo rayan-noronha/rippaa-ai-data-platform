@@ -1,0 +1,14 @@
+{
+  "id": "bb5b4e60-5618-4009-ac83-372c15821f80",
+  "filename": "policy_raa_insurance_travel_001.txt",
+  "source_domain": "insurance",
+  "file_type": "txt",
+  "metadata": {
+    "policy_type": "Travel",
+    "insurer": "RAA Insurance",
+    "effective_date": "2025-12-12",
+    "expiry_date": "2026-12-12",
+    "policyholder": "Patrick Sanchez"
+  },
+  "generated_at": "2026-03-25T10:56:45.924967"
+}
