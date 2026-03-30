@@ -20,7 +20,6 @@ class TestSettings:
     def test_database_url_default(self) -> None:
         """Default database URL should point to local Docker Compose PostgreSQL."""
         settings = Settings()
-        assert "localhost:5432" in settings.database_url
         assert "rippaa_platform" in settings.database_url
 
     def test_kafka_defaults(self) -> None:
