@@ -5,7 +5,7 @@ Reporting Entity: Coastal Underwriters
 ABN: 48 564 174 805
 APRA Registration: INS-17852
 Reporting Period: Q4 2024
-Submitted: 24/03/2026
+Submitted: 30/03/2026
 Prepared by: Robert Torres — Chief Risk Officer
 Contact: rodney65@example.com
 
@@ -19,7 +19,7 @@ Status: COMPLIANT
 
 2. RISK MANAGEMENT (CPS 220)
 
-Risk Management Framework: Reviewed June 2025
+Risk Management Framework: Reviewed July 2025
 Key risks identified:
 - Cyber security threats (rating: Medium)
 - Climate-related financial risks (rating: Medium)
@@ -57,6 +57,6 @@ I, Eric Meyer, CEO of Coastal Underwriters, declare that to the best of my knowl
 the information contained in this report is accurate and complete.
 
 Signed: [Digital signature]
-Date: 24/03/2026
+Date: 30/03/2026
 
 Medicare Number on file for CEO verification: 3980 71141 2

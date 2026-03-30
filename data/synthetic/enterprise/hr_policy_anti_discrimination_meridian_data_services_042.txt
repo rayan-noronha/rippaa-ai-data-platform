@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Anti-Discrimination and Harassment
 Document ID: HR-365
-Effective Date: 07 December 2024
+Effective Date: 13 December 2024
 Version: 1.2
 Owner: Jennifer Chen, Head of People & Culture
 Email: diazmelissa@example.com
@@ -46,7 +46,7 @@ People & Culture team at hr@meridiandataservices.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 25/04/2023 | Paige Roberts | Initial release |
-| 2.0 | 10/06/2025 | Andrew Cruz | Annual review update |
+| 1.0 | 01/05/2023 | Paige Roberts | Initial release |
+| 2.0 | 16/06/2025 | Andrew Cruz | Annual review update |
 
 ABN: 44 850 220 889

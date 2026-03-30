@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Onboarding Procedure
 Document ID: HR-608
-Effective Date: 16 April 2025
+Effective Date: 22 April 2025
 Version: 2.4
 Owner: Sandra Cole, Head of People & Culture
 Email: johnsonbrian@example.net
@@ -46,7 +46,7 @@ People & Culture team at hr@nexustechnologies.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 10/04/2023 | Daniel Valdez | Initial release |
-| 2.0 | 13/10/2025 | Michael Sawyer | Annual review update |
+| 1.0 | 16/04/2023 | Daniel Valdez | Initial release |
+| 2.0 | 19/10/2025 | Michael Sawyer | Annual review update |
 
 ABN: 17 611 979 680

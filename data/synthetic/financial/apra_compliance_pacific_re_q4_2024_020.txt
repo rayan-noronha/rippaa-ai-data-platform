@@ -5,7 +5,7 @@ Reporting Entity: Pacific Re
 ABN: 43 820 556 319
 APRA Registration: INS-90199
 Reporting Period: Q4 2024
-Submitted: 24/03/2026
+Submitted: 30/03/2026
 Prepared by: Kelly Carroll — Chief Risk Officer
 Contact: jameswhitaker@example.org
 
@@ -19,7 +19,7 @@ Status: COMPLIANT
 
 2. RISK MANAGEMENT (CPS 220)
 
-Risk Management Framework: Reviewed June 2025
+Risk Management Framework: Reviewed July 2025
 Key risks identified:
 - Cyber security threats (rating: High)
 - Climate-related financial risks (rating: High)
@@ -57,6 +57,6 @@ I, Anthony Ward, CEO of Pacific Re, declare that to the best of my knowledge,
 the information contained in this report is accurate and complete.
 
 Signed: [Digital signature]
-Date: 24/03/2026
+Date: 30/03/2026
 
 Medicare Number on file for CEO verification: 4457 30644 3

@@ -1,5 +1,5 @@
 {
-  "id": "50d8b325-97ea-4717-a7d6-6d9ecb319800",
+  "id": "8d81140a-2f3d-4822-91a2-d741c409ca70",
   "filename": "council_policy_procurement_and_contracts_adelaide_030.txt",
   "source_domain": "government",
   "file_type": "txt",
@@ -7,8 +7,8 @@
     "document_type": "council_policy",
     "policy_area": "Procurement and Contracts",
     "council": "City of Adelaide",
-    "approval_date": "2024-05-09",
+    "approval_date": "2024-05-15",
     "is_stale": false
   },
-  "generated_at": "2026-03-25T10:56:46.071708"
+  "generated_at": "2026-03-31T08:56:01.120089"
 }

@@ -4,8 +4,8 @@ COUNCIL POLICY
 Policy Title: Data Governance
 Policy Number: CP-574
 Version: 4.4
-Approval Date: 05 October 2025
-Next Review Date: 05 October 2027
+Approval Date: 11 October 2025
+Next Review Date: 11 October 2027
 Responsible Officer: Walter Fuentes, Manager Governance
 Contact: alexandriajimenez@example.net
 Phone: 08 8406 4762

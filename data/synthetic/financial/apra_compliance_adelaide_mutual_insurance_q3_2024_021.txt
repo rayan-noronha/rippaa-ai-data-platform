@@ -5,7 +5,7 @@ Reporting Entity: Adelaide Mutual Insurance
 ABN: 35 911 242 342
 APRA Registration: INS-74752
 Reporting Period: Q3 2024
-Submitted: 24/03/2026
+Submitted: 30/03/2026
 Prepared by: John Sanders — Chief Risk Officer
 Contact: maldonadojohn@example.com
 
@@ -57,6 +57,6 @@ I, Tyler Wells, CEO of Adelaide Mutual Insurance, declare that to the best of my
 the information contained in this report is accurate and complete.
 
 Signed: [Digital signature]
-Date: 24/03/2026
+Date: 30/03/2026
 
 Medicare Number on file for CEO verification: 6709 19666 3

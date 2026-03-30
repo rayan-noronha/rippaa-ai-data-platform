@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Code of Conduct
 Document ID: HR-978
-Effective Date: 14 June 2025
+Effective Date: 20 June 2025
 Version: 1.4
 Owner: Erica Oconnell, Head of People & Culture
 Email: kathrynwatkins@example.com
@@ -46,7 +46,7 @@ People & Culture team at hr@nexustechnologies.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 18/04/2023 | Charles Perry | Initial release |
-| 2.0 | 19/12/2025 | Christopher Sanchez | Annual review update |
+| 1.0 | 24/04/2023 | Charles Perry | Initial release |
+| 2.0 | 25/12/2025 | Christopher Sanchez | Annual review update |
 
 ABN: 38 429 354 526

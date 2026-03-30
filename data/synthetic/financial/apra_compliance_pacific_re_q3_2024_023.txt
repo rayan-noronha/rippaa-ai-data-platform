@@ -5,7 +5,7 @@ Reporting Entity: Pacific Re
 ABN: 26 740 410 729
 APRA Registration: INS-79924
 Reporting Period: Q3 2024
-Submitted: 24/03/2026
+Submitted: 30/03/2026
 Prepared by: Debra Ortiz — Chief Risk Officer
 Contact: hancocktammy@example.net
 
@@ -19,7 +19,7 @@ Status: COMPLIANT
 
 2. RISK MANAGEMENT (CPS 220)
 
-Risk Management Framework: Reviewed March 2025
+Risk Management Framework: Reviewed April 2025
 Key risks identified:
 - Cyber security threats (rating: High)
 - Climate-related financial risks (rating: High)
@@ -57,6 +57,6 @@ I, Carlos Thompson, CEO of Pacific Re, declare that to the best of my knowledge,
 the information contained in this report is accurate and complete.
 
 Signed: [Digital signature]
-Date: 24/03/2026
+Date: 30/03/2026
 
 Medicare Number on file for CEO verification: 6469 47967 5

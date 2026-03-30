@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Onboarding Procedure
 Document ID: HR-102
-Effective Date: 13 March 2025
+Effective Date: 19 March 2025
 Version: 1.0
 Owner: Sara Brown, Head of People & Culture
 Email: wilsonbrooke@example.net
@@ -46,7 +46,7 @@ People & Culture team at hr@meridiandataservices.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 18/06/2023 | Dale Rogers | Initial release |
-| 2.0 | 11/02/2026 | Miss Erika Daugherty | Annual review update |
+| 1.0 | 24/06/2023 | Dale Rogers | Initial release |
+| 2.0 | 17/02/2026 | Miss Erika Daugherty | Annual review update |
 
 ABN: 15 583 472 492

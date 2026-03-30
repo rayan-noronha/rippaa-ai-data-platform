@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Remote Work Policy
 Document ID: HR-926
-Effective Date: 19 August 2024
+Effective Date: 25 August 2024
 Version: 2.2
 Owner: James Rodriguez, Head of People & Culture
 Email: tom73@example.org
@@ -46,7 +46,7 @@ People & Culture team at hr@austechsolutions.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 07/04/2023 | Nathan Watkins | Initial release |
-| 2.0 | 29/09/2025 | Ricky Schneider | Annual review update |
+| 1.0 | 13/04/2023 | Nathan Watkins | Initial release |
+| 2.0 | 05/10/2025 | Ricky Schneider | Annual review update |
 
 ABN: 18 369 829 690

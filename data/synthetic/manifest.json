@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T10:56:46.134674",
+  "generated_at": "2026-03-31T08:56:01.165358",
   "total_documents": 53,
   "by_domain": {
     "insurance": 20,
@@ -15,319 +15,319 @@
   },
   "documents": [
     {
-      "id": "bb5b4e60-5618-4009-ac83-372c15821f80",
+      "id": "8edbed57-69e0-4f65-bf36-538dca849f14",
       "filename": "policy_raa_insurance_travel_001.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "e43f329a-19ed-40ea-8b35-28e4af4aec08",
+      "id": "6ec50662-3767-4107-b927-8261608c201b",
       "filename": "policy_aami_business_pack_002.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "3ec33344-322c-406e-9d32-a0468fb2a1db",
+      "id": "516659f8-6479-4c96-a87b-8bb5a2951d12",
       "filename": "policy_allianz_home_contents_003.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "b639b9df-621f-471a-b845-31a9d29a83d4",
+      "id": "6783768d-737c-4b02-b65a-678ce4242ed1",
       "filename": "policy_aami_home_contents_004.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "0e76d424-036b-428e-af90-f0a70f463612",
+      "id": "d5db771f-e104-4a30-8f56-f320a2d874b9",
       "filename": "policy_qbe_travel_005.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "5088d940-9149-4a7e-9cea-6bd9f4502a94",
+      "id": "88790889-5726-4095-b129-12d271e1b051",
       "filename": "policy_aami_ctp_006.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "d88731cd-909b-4268-adfc-4e23fcd96c65",
+      "id": "5daa02f8-e038-48ab-88fd-a87a4d48506e",
       "filename": "policy_raa_insurance_business_pack_007.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "16585548-78e4-45ec-8c01-49e8a06c26f1",
+      "id": "9a417ed8-95bb-438c-943d-6668ad882614",
       "filename": "policy_raa_insurance_landlord_008.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "d437f24b-487d-498f-9ea5-5b8388437494",
+      "id": "828627b5-ba28-462e-a74c-87aae5a4ab76",
       "filename": "claims_report_q2_2025_009.csv",
       "source_domain": "insurance",
       "file_type": "csv"
     },
     {
-      "id": "7225e60f-89e8-473b-8f2e-a389a03d53dc",
+      "id": "f01553b5-1090-4b35-b958-158f169ced48",
       "filename": "claims_report_q1_2025_010.csv",
       "source_domain": "insurance",
       "file_type": "csv"
     },
     {
-      "id": "843882ed-54dc-492a-b392-24f4d10a43be",
+      "id": "b8a29a1f-5bd7-4df2-bee0-f58177f66ba6",
       "filename": "claims_report_q4_2025_011.csv",
       "source_domain": "insurance",
       "file_type": "csv"
     },
     {
-      "id": "6e9a4bed-df2f-41ff-884d-18767d7ce110",
+      "id": "80d28295-e303-48de-9e41-4ea9f5a69417",
       "filename": "claims_report_q2_2025_012.csv",
       "source_domain": "insurance",
       "file_type": "csv"
     },
     {
-      "id": "ede3e8fa-f54f-468c-be82-187c12eb24e5",
+      "id": "8f946089-c17c-4eb1-a118-2e00036adbf7",
       "filename": "underwriting_guidelines_commercial_property_013.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "f431b96b-40e7-4486-9182-a55d145ec9e8",
+      "id": "000fe0b8-4256-47a4-a349-cbd563ce1905",
       "filename": "underwriting_guidelines_commercial_property_014.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "47c673f2-0af8-4bd0-838a-04929e893cc9",
+      "id": "7192c0d0-6e63-4a0c-b507-31112541d2a5",
       "filename": "underwriting_guidelines_commercial_property_015.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "c20edf9b-acf5-4731-b01d-9549e8fba979",
+      "id": "7166426d-0d32-4823-9706-09f9261dc9c4",
       "filename": "product_update_bulletin_016.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "94fa77ac-a275-4a53-9482-32ee010b88ec",
+      "id": "8309088b-6a61-4396-ada1-6da7b887b884",
       "filename": "product_update_bulletin_017.txt",
       "source_domain": "insurance",
       "file_type": "txt"
     },
     {
-      "id": "4f298a06-220a-4373-ba23-da19175a8188",
+      "id": "ba366aa7-312e-4bc7-ada5-1091faaeab87",
       "filename": "claims_export_malformed_018.csv",
       "source_domain": "insurance",
       "file_type": "csv_raw"
     },
     {
-      "id": "93be4eb0-34f7-4f2e-bd42-5f90c574b2a6",
+      "id": "a7d76f8a-8fa3-4f6f-8114-6d8dbbe25dcc",
       "filename": "claims_export_malformed_019.csv",
       "source_domain": "insurance",
       "file_type": "csv_raw"
     },
     {
-      "id": "e6e84b45-79c6-4ce6-8fef-157b35f367de",
+      "id": "c49c405b-9430-4885-b65e-39096cbf3fde",
       "filename": "apra_compliance_pacific_re_q4_2024_020.txt",
       "source_domain": "financial",
       "file_type": "txt"
     },
     {
-      "id": "d305cd82-2bc6-4bb3-aa78-5b4d9201e4b1",
+      "id": "eddfa13d-821b-4f12-b55d-640629111b71",
       "filename": "apra_compliance_adelaide_mutual_insurance_q3_2024_021.txt",
       "source_domain": "financial",
       "file_type": "txt"
     },
     {
-      "id": "6dadb010-7b6b-43a7-a4b1-60d9cb3ce0e2",
+      "id": "a97229af-657a-4722-b755-22e214cb93ca",
       "filename": "apra_compliance_coastal_underwriters_q3_2024_022.txt",
       "source_domain": "financial",
       "file_type": "txt"
     },
     {
-      "id": "6b1edda5-cd31-483e-9a3d-2507cc4fdb69",
+      "id": "974265be-59f3-4356-b276-cf7ad6cb9356",
       "filename": "apra_compliance_pacific_re_q3_2024_023.txt",
       "source_domain": "financial",
       "file_type": "txt"
     },
     {
-      "id": "71982f51-d426-4d2d-af00-1243bf43c386",
+      "id": "74770e63-5fe4-43aa-ad5e-9e383d53a868",
       "filename": "apra_compliance_coastal_underwriters_q4_2024_024.txt",
       "source_domain": "financial",
       "file_type": "txt"
     },
     {
-      "id": "6d82e398-79f1-45b0-80fa-d67e1b65b989",
+      "id": "bb83e5a3-044c-48d3-92c8-a9c3ca63814f",
       "filename": "risk_assessment_2024_025.json",
       "source_domain": "financial",
       "file_type": "json"
     },
     {
-      "id": "6977eb45-a82a-4dab-8d30-9f1968cec0a3",
+      "id": "772d87de-2873-4fc9-bcf8-957ffdf7704c",
       "filename": "risk_assessment_2024_026.json",
       "source_domain": "financial",
       "file_type": "json"
     },
     {
-      "id": "de3d0d1e-bce5-4f1a-b3a4-1004e62dc4ad",
+      "id": "3cda8c2e-bad2-4f72-a026-126dc02a0a77",
       "filename": "risk_assessment_2025_027.json",
       "source_domain": "financial",
       "file_type": "json"
     },
     {
-      "id": "7e35bcbd-6c6f-4356-95a8-0bc817e66285",
+      "id": "0af79ae8-585f-4420-bc51-62ace1412807",
       "filename": "risk_assessment_2024_028.json",
       "source_domain": "financial",
       "file_type": "json"
     },
     {
-      "id": "92fc0596-6c93-4920-8862-c19392796678",
+      "id": "923ad283-7335-4082-86fb-da8fadea2e4b",
       "filename": "risk_assessment_2024_029.json",
       "source_domain": "financial",
       "file_type": "json"
     },
     {
-      "id": "50d8b325-97ea-4717-a7d6-6d9ecb319800",
+      "id": "8d81140a-2f3d-4822-91a2-d741c409ca70",
       "filename": "council_policy_procurement_and_contracts_adelaide_030.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "70bab984-ebf2-476c-b36a-6f28cb2512b0",
+      "id": "e2dad987-5df7-4269-b176-bcdd695fdb39",
       "filename": "council_policy_freedom_of_information_salisbury_031.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "f7610069-b909-4783-b45a-a24aecf5d093",
+      "id": "8e019f76-6107-481c-b052-9ae082060f9d",
       "filename": "council_policy_public_consultation_charles_sturt_032.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "0501e716-134e-487a-9156-b925085c0b0a",
+      "id": "72d29819-c018-4e17-acfb-f33e0acdcd87",
       "filename": "council_policy_environmental_sustainability_marion_033.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "c0c4a782-f278-4cda-950a-5929f2950c93",
+      "id": "a84d61c3-0651-49f1-957b-b14ac4d87a12",
       "filename": "council_policy_data_governance_salisbury_034.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "4cc595d3-267d-4333-b409-d25b953a1412",
+      "id": "807c1b83-5947-43bd-a8d7-ad0755c508ef",
       "filename": "council_policy_asset_management_salisbury_035.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "e9e41638-0e04-40f5-b1ae-93659289fe41",
+      "id": "7bafc897-7f15-4600-821e-463d483bba5b",
       "filename": "council_policy_community_grants_program_adelaide_036.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "b74e83aa-4584-429c-beca-dc250bc54c7c",
+      "id": "5caab257-7ed6-4870-81df-b2e2adaf83c3",
       "filename": "council_policy_environmental_sustainability_adelaide_037.txt",
       "source_domain": "government",
       "file_type": "txt"
     },
     {
-      "id": "b1e3dead-b327-4d7e-8459-aa2647517527",
+      "id": "91496e5e-38c1-4d33-a536-8ace422304a6",
       "filename": "procurement_register_2024_038.csv",
       "source_domain": "government",
       "file_type": "csv"
     },
     {
-      "id": "9dd70da6-bd71-4474-a10b-dab9f879b9b0",
+      "id": "31aff84e-e28d-444f-8d5e-f3c03c57add3",
       "filename": "procurement_register_2024_039.csv",
       "source_domain": "government",
       "file_type": "csv"
     },
     {
-      "id": "0fd307eb-317a-4e8a-a449-b6fd691e402a",
+      "id": "dc7ff4f1-7cdd-496e-b955-8fbb2a3c59b6",
       "filename": "procurement_register_2024_040.csv",
       "source_domain": "government",
       "file_type": "csv"
     },
     {
-      "id": "fa7c3ad8-9745-410a-ba09-5b6db8836822",
+      "id": "82402799-9e0c-4806-bc49-99f199ebfc4f",
       "filename": "procurement_register_2025_041.csv",
       "source_domain": "government",
       "file_type": "csv"
     },
     {
-      "id": "54920a86-9b9e-4925-a563-36512890bf3d",
+      "id": "a4d20f4f-a700-49ea-9fee-d60b845fa60b",
       "filename": "hr_policy_anti_discrimination_meridian_data_services_042.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "25e0d5a3-75c0-4293-948f-394b5126cbe6",
+      "id": "10115824-a742-44d3-ae82-21719945c47d",
       "filename": "hr_policy_remote_work_austech_solutions_043.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "a7cf2e4e-3fa7-40ef-9a8e-a35de1c60d2e",
+      "id": "0e7ff46c-39d9-4178-883c-fc65c52f505b",
       "filename": "hr_policy_onboarding_nexus_technologies_044.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "b37c6e7f-0034-41e0-8462-1be0ea173368",
+      "id": "b1b01447-524c-4580-b7b2-6ef489a84d88",
       "filename": "hr_policy_code_of_conduct_austech_solutions_045.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "e5f9b8ff-1821-4af9-8f9c-852e1c58c5de",
+      "id": "c54ce4e6-f0a4-405c-916f-536813d3b946",
       "filename": "hr_policy_onboarding_meridian_data_services_046.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "3a1187b7-4d75-4d81-88d2-e3445269ec21",
+      "id": "10b93fe8-0e6a-4519-8cdb-8e5aa8a202e3",
       "filename": "hr_policy_code_of_conduct_nexus_technologies_047.txt",
       "source_domain": "enterprise",
       "file_type": "txt"
     },
     {
-      "id": "a763c0a6-ea32-4e70-9dda-54e1684b228e",
+      "id": "608370a1-f281-4e82-a7f1-43a2391793a6",
       "filename": "security_assessment_meridian_data_services_202603_048.json",
       "source_domain": "enterprise",
       "file_type": "json"
     },
     {
-      "id": "a0c54c7b-6ab0-436f-8ec8-477be5dade91",
+      "id": "89d2e697-9d26-46e4-b8da-4b9b529a9397",
       "filename": "security_assessment_nexus_technologies_202603_049.json",
       "source_domain": "enterprise",
       "file_type": "json"
     },
     {
-      "id": "938a01dc-4bf9-4520-a4ba-ed5f2915eaa0",
+      "id": "3c6610a4-9ee8-4be5-b3f4-c5fe18d31f91",
       "filename": "security_assessment_austech_solutions_202603_050.json",
       "source_domain": "enterprise",
       "file_type": "json"
     },
     {
-      "id": "fe36fc12-5990-48cb-8d50-b8e48d536777",
+      "id": "f5b4ef2b-d0a7-40bd-9ef8-05a1049a8f95",
       "filename": "security_assessment_nexus_technologies_202603_051.json",
       "source_domain": "enterprise",
       "file_type": "json"
     },
     {
-      "id": "1f8e5433-0fc2-46a2-b60a-acc7d4a034bc",
+      "id": "ba21bb29-65b9-4d10-983c-b58ebbc7c4d7",
       "filename": "security_assessment_austech_solutions_202603_052.json",
       "source_domain": "enterprise",
       "file_type": "json"
     },
     {
-      "id": "653251c6-489c-4805-91da-11ea1fa458de",
+      "id": "6e26bb76-61d9-42ea-936d-772dfb01329d",
       "filename": "DUPLICATE_policy_raa_insurance_travel_001.txt",
       "source_domain": "insurance",
       "file_type": "txt"

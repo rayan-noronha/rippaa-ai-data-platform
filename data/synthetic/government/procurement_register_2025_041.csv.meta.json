@@ -1,5 +1,5 @@
 {
-  "id": "fa7c3ad8-9745-410a-ba09-5b6db8836822",
+  "id": "82402799-9e0c-4806-bc49-99f199ebfc4f",
   "filename": "procurement_register_2025_041.csv",
   "source_domain": "government",
   "file_type": "csv",
@@ -7,5 +7,5 @@
     "document_type": "procurement_register",
     "total_records": 27
   },
-  "generated_at": "2026-03-25T10:56:46.099719"
+  "generated_at": "2026-03-31T08:56:01.142172"
 }

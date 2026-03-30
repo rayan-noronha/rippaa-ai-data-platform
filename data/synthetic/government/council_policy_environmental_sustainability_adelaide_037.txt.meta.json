@@ -1,5 +1,5 @@
 {
-  "id": "b74e83aa-4584-429c-beca-dc250bc54c7c",
+  "id": "5caab257-7ed6-4870-81df-b2e2adaf83c3",
   "filename": "council_policy_environmental_sustainability_adelaide_037.txt",
   "source_domain": "government",
   "file_type": "txt",
@@ -7,8 +7,8 @@
     "document_type": "council_policy",
     "policy_area": "Environmental Sustainability",
     "council": "City of Adelaide",
-    "approval_date": "2025-03-22",
+    "approval_date": "2025-03-28",
     "is_stale": false
   },
-  "generated_at": "2026-03-25T10:56:46.082736"
+  "generated_at": "2026-03-31T08:56:01.128914"
 }

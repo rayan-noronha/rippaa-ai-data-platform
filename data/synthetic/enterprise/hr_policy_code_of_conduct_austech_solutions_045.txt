@@ -3,7 +3,7 @@ HUMAN RESOURCES POLICY
 
 Policy: Code of Conduct
 Document ID: HR-261
-Effective Date: 17 July 2024
+Effective Date: 23 July 2024
 Version: 2.0
 Owner: Crystal Jones, Head of People & Culture
 Email: tracysmith@example.net
@@ -46,7 +46,7 @@ People & Culture team at hr@austechsolutions.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | 11/04/2023 | Matthew Smith | Initial release |
-| 2.0 | 24/11/2025 | Eric Leon | Annual review update |
+| 1.0 | 17/04/2023 | Matthew Smith | Initial release |
+| 2.0 | 30/11/2025 | Eric Leon | Annual review update |
 
 ABN: 96 840 218 333

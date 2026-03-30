@@ -1,5 +1,5 @@
 {
-  "id": "4cc595d3-267d-4333-b409-d25b953a1412",
+  "id": "807c1b83-5947-43bd-a8d7-ad0755c508ef",
   "filename": "council_policy_asset_management_salisbury_035.txt",
   "source_domain": "government",
   "file_type": "txt",
@@ -7,8 +7,8 @@
     "document_type": "council_policy",
     "policy_area": "Asset Management",
     "council": "City of Salisbury",
-    "approval_date": "2024-11-29",
+    "approval_date": "2024-12-05",
     "is_stale": false
   },
-  "generated_at": "2026-03-25T10:56:46.079117"
+  "generated_at": "2026-03-31T08:56:01.126199"
 }
