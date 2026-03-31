@@ -13,7 +13,7 @@ from starlette.responses import Response
 
 from src.shared.config import get_settings
 from src.shared.database import check_database_health, get_engine
-from src.shared.models import HealthResponse
+from src.shared.models import HealthResponse, QueryRequest
 from src.ingestion.s3_client import check_s3_health
 from src.ingestion.kafka_producer import check_kafka_health
 
@@ -147,9 +147,28 @@ async def ingest_document() -> dict[str, str]:
 
 
 @app.post("/query")
-async def query_knowledge_base() -> dict[str, str]:
-    """Query the knowledge base using agentic RAG."""
-    return {"status": "not_implemented", "message": "Agentic RAG query coming in Phase 3"}
+async def query_knowledge_base(request: QueryRequest) -> dict:
+    """Query the knowledge base using agentic RAG.
+
+    Runs four agents in sequence:
+    1. Query Understanding — classifies intent, rewrites query
+    2. Retrieval — hybrid search across pgvector
+    3. Data Quality — validates sources
+    4. Synthesis — generates cited answer
+    """
+    from src.agents.orchestrator import run_query
+
+    domains = [d.value for d in request.source_domains] if request.source_domains else None
+
+    result = run_query(
+        query=request.query,
+        max_results=request.max_results,
+        source_domains=domains,
+    )
+
+    QUERIES_PROCESSED.inc()
+
+    return result
 
 
 @app.get("/documents")
