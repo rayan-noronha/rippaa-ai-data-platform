@@ -8,13 +8,11 @@ Both return ranked results that the retrieval agent combines
 for hybrid search.
 """
 
-import json
-
 import structlog
 from sqlalchemy import text
 
-from src.shared.database import get_engine
 from src.processing.embedder import generate_embedding
+from src.shared.database import get_engine
 
 logger = structlog.get_logger(__name__)
 

@@ -10,8 +10,6 @@ Usage:
 """
 
 import argparse
-import json
-import sys
 
 
 def main() -> None:
@@ -21,8 +19,6 @@ def main() -> None:
     parser.add_argument("--domain", type=str, help="Filter by domain (insurance, financial, government, enterprise)")
     parser.add_argument("--max-results", type=int, default=5, help="Maximum chunks to retrieve")
     args = parser.parse_args()
-
-    from src.agents.orchestrator import run_query
 
     if args.query:
         # Single query mode
@@ -86,7 +82,9 @@ def _display_result(result: dict) -> None:
     if sources:
         print("📚 SOURCES:")
         for i, src in enumerate(sources, 1):
-            print(f"   {i}. {src['filename']} ({src['source_domain']}) — relevance: {src.get('relevance_score', 'N/A')}")
+            print(
+                f"   {i}. {src['filename']} ({src['source_domain']}) — relevance: {src.get('relevance_score', 'N/A')}"
+            )
         print()
 
     # Metadata

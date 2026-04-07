@@ -16,7 +16,7 @@ logger = structlog.get_logger(__name__)
 
 # Try to import Presidio — fall back to regex-based detection if unavailable
 try:
-    from presidio_analyzer import AnalyzerEngine, PatternRecognizer, Pattern
+    from presidio_analyzer import AnalyzerEngine, Pattern, PatternRecognizer
     from presidio_anonymizer import AnonymizerEngine
 
     PRESIDIO_AVAILABLE = True
@@ -174,7 +174,7 @@ def _detect_with_presidio(
     matches = []
     for result in results:
         if result.score >= confidence_threshold:
-            original_text = text[result.start:result.end]
+            original_text = text[result.start : result.end]
             masked = _mask_entity(result.entity_type, original_text)
             matches.append(
                 PIIMatch(
@@ -260,7 +260,7 @@ def mask_text(text: str, pii_matches: list[PIIMatch]) -> str:
 
     masked_text = text
     for match in sorted_matches:
-        masked_text = masked_text[:match.start] + match.masked_text + masked_text[match.end:]
+        masked_text = masked_text[: match.start] + match.masked_text + masked_text[match.end :]
 
     return masked_text
 

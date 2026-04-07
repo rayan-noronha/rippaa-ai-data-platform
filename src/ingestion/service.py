@@ -7,17 +7,17 @@ Orchestrates the full ingestion flow:
 """
 
 import os
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
 import structlog
 from sqlalchemy import text
 
+from src.ingestion.kafka_producer import ensure_topics_exist, publish_document_event
+from src.ingestion.s3_client import ensure_bucket_exists, upload_file_to_s3
 from src.shared.config import get_settings
 from src.shared.database import get_engine
-from src.ingestion.s3_client import ensure_bucket_exists, upload_file_to_s3
-from src.ingestion.kafka_producer import ensure_topics_exist, publish_document_event
 
 logger = structlog.get_logger(__name__)
 
@@ -43,7 +43,7 @@ def ingest_document(
     file_size = os.path.getsize(file_path)
 
     # Build S3 key: {domain}/{YYYY}/{MM}/{document_id}/{filename}
-    now = datetime.now(timezone.utc)
+    now = datetime.now(UTC)
     s3_key = f"{source_domain}/{now.year}/{now.month:02d}/{document_id}/{filename}"
 
     logger.info(
@@ -139,7 +139,7 @@ def ingest_directory(directory: str) -> list[dict]:
         # Look for metadata sidecar
         meta_path = Path(str(file_path) + ".meta.json")
         if meta_path.exists():
-            with open(meta_path, "r", encoding="utf-8") as f:
+            with open(meta_path, encoding="utf-8") as f:
                 meta = json.load(f)
             source_domain = meta.get("source_domain", "enterprise")
             file_type = meta.get("file_type", "txt")
@@ -157,11 +157,13 @@ def ingest_directory(directory: str) -> list[dict]:
             results.append(result)
         except Exception:
             logger.exception("Failed to ingest document", file=str(file_path))
-            results.append({
-                "filename": file_path.name,
-                "status": "failed",
-                "error": "See logs for details",
-            })
+            results.append(
+                {
+                    "filename": file_path.name,
+                    "status": "failed",
+                    "error": "See logs for details",
+                }
+            )
 
     # Summary
     succeeded = sum(1 for r in results if r.get("status") == "ingested")

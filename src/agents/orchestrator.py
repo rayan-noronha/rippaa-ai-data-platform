@@ -15,11 +15,11 @@ from uuid import uuid4
 import structlog
 from sqlalchemy import text
 
-from src.shared.database import get_engine
+from src.agents.quality_agent import check_quality
 from src.agents.query_agent import understand_query
 from src.agents.retrieval_agent import retrieve_chunks
-from src.agents.quality_agent import check_quality
 from src.agents.synthesis_agent import synthesise_answer
+from src.shared.database import get_engine
 
 logger = structlog.get_logger(__name__)
 
@@ -111,7 +111,9 @@ def run_query(
         }
 
         # Log to query_log table
-        _log_query(query_id, query, rewritten_query, query_understanding, retrieved_chunks, synthesis_result, total_elapsed)
+        _log_query(
+            query_id, query, rewritten_query, query_understanding, retrieved_chunks, synthesis_result, total_elapsed
+        )
 
         logger.info(
             "RAG pipeline complete",

@@ -51,7 +51,7 @@ def synthesise_answer(
     if not retrieved_chunks:
         return {
             "answer": "I couldn't find any relevant documents to answer your query. "
-                      "Please try rephrasing your question or broadening the search scope.",
+            "Please try rephrasing your question or broadening the search scope.",
             "sources": [],
             "quality_notes": quality_assessment.get("quality_issues", []),
         }
@@ -60,13 +60,13 @@ def synthesise_answer(
     context = _build_context(retrieved_chunks, quality_assessment)
 
     user_message = f"""Query: {query}
-Intent: {query_understanding.get('intent', 'unknown')}
+Intent: {query_understanding.get("intent", "unknown")}
 
 Quality Assessment:
-- Overall quality: {quality_assessment.get('overall_quality', 'unknown')}
-- Issues: {', '.join(quality_assessment.get('quality_issues', [])) or 'None'}
-- Conflicts: {', '.join(quality_assessment.get('conflicts', [])) or 'None'}
-- Recommendation: {quality_assessment.get('recommendation', 'Proceed')}
+- Overall quality: {quality_assessment.get("overall_quality", "unknown")}
+- Issues: {", ".join(quality_assessment.get("quality_issues", [])) or "None"}
+- Conflicts: {", ".join(quality_assessment.get("conflicts", [])) or "None"}
+- Recommendation: {quality_assessment.get("recommendation", "Proceed")}
 
 Retrieved Documents:
 {context}
@@ -124,10 +124,12 @@ def _extract_sources(chunks: list[dict]) -> list[dict]:
         doc_id = chunk.get("document_id")
         if doc_id and doc_id not in seen:
             seen.add(doc_id)
-            sources.append({
-                "document_id": doc_id,
-                "filename": chunk.get("filename", "unknown"),
-                "source_domain": chunk.get("source_domain", "unknown"),
-                "relevance_score": chunk.get("relevance_score", 0),
-            })
+            sources.append(
+                {
+                    "document_id": doc_id,
+                    "filename": chunk.get("filename", "unknown"),
+                    "source_domain": chunk.get("source_domain", "unknown"),
+                    "relevance_score": chunk.get("relevance_score", 0),
+                }
+            )
     return sources

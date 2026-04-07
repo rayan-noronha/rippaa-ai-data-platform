@@ -15,19 +15,18 @@ or directly for a single document.
 
 import json
 import time
-from datetime import datetime, timezone
 from uuid import uuid4
 
 import structlog
 from sqlalchemy import text
 
+from src.ingestion.s3_client import get_s3_client
+from src.processing.chunker import chunk_text
+from src.processing.embedder import generate_embedding
+from src.processing.parser import ParseError, parse_document
+from src.processing.pii_detector import detect_pii, mask_text
 from src.shared.config import get_settings
 from src.shared.database import get_engine
-from src.ingestion.s3_client import get_s3_client
-from src.processing.parser import parse_document, ParseError
-from src.processing.chunker import chunk_text
-from src.processing.pii_detector import detect_pii, mask_text
-from src.processing.embedder import generate_embedding
 
 logger = structlog.get_logger(__name__)
 
@@ -96,13 +95,15 @@ def process_document(
             # Mask the text
             masked_text = mask_text(chunk["chunk_text"], pii_matches)
 
-            masked_chunks.append({
-                **chunk,
-                "original_text": chunk["chunk_text"],
-                "chunk_text": masked_text,
-                "pii_detected": len(pii_matches) > 0,
-                "pii_matches": pii_matches,
-            })
+            masked_chunks.append(
+                {
+                    **chunk,
+                    "original_text": chunk["chunk_text"],
+                    "chunk_text": masked_text,
+                    "pii_detected": len(pii_matches) > 0,
+                    "pii_matches": pii_matches,
+                }
+            )
 
             total_pii_detections.extend(pii_matches)
 
@@ -244,10 +245,12 @@ def _store_chunks(engine: object, document_id: str, chunks: list[dict]) -> None:
                     "embedding": embedding_str,
                     "pii_detected": chunk["pii_detected"],
                     "pii_masked": chunk["pii_detected"],  # If PII detected, it's been masked
-                    "metadata": json.dumps({
-                        "char_start": chunk["char_start"],
-                        "char_end": chunk["char_end"],
-                    }),
+                    "metadata": json.dumps(
+                        {
+                            "char_start": chunk["char_start"],
+                            "char_end": chunk["char_end"],
+                        }
+                    ),
                 },
             )
 

@@ -8,13 +8,13 @@ Third agent in the RAG pipeline. Checks retrieved chunks for:
 """
 
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import structlog
 from sqlalchemy import text
 
-from src.shared.database import get_engine
 from src.agents.llm_client import call_llm
+from src.shared.database import get_engine
 
 logger = structlog.get_logger(__name__)
 
@@ -133,7 +133,7 @@ def _check_staleness(chunks: list[dict]) -> list[str]:
             )
             row = result.fetchone()
             if row and row.ingested_at:
-                age_days = (datetime.now(timezone.utc) - row.ingested_at).days
+                age_days = (datetime.now(UTC) - row.ingested_at).days
                 if age_days > 365:
                     stale.append(f"{row.filename} (ingested {age_days} days ago)")
 

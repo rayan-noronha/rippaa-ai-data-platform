@@ -93,10 +93,7 @@ def _generate_local_embedding(text: str) -> list[float]:
 
     # L2 normalize to unit length
     magnitude = math.sqrt(sum(x * x for x in raw))
-    if magnitude > 0:
-        embedding = [x / magnitude for x in raw]
-    else:
-        embedding = raw
+    embedding = [x / magnitude for x in raw] if magnitude > 0 else raw
 
     logger.debug("Generated local embedding", text_length=len(text), dimensions=len(embedding))
     return embedding
@@ -109,6 +106,7 @@ def _generate_bedrock_embedding(text: str) -> list[float]:
     Used in production; local dev should use 'local' mode.
     """
     import json
+
     import boto3
 
     settings = get_settings()
@@ -118,9 +116,11 @@ def _generate_bedrock_embedding(text: str) -> list[float]:
         region_name=settings.aws_region,
     )
 
-    body = json.dumps({
-        "inputText": text[:8192],  # Titan has a max input length
-    })
+    body = json.dumps(
+        {
+            "inputText": text[:8192],  # Titan has a max input length
+        }
+    )
 
     response = client.invoke_model(
         modelId=settings.embedding_model_id,

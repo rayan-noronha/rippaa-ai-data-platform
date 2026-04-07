@@ -50,8 +50,12 @@ def main() -> None:
     print()
     print("📊 Verify results:")
     print('   • Chunks: docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT count(*) FROM chunks"')
-    print('   • PII:    docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT entity_type, count(*) FROM pii_detections GROUP BY entity_type"')
-    print('   • Status: docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT status, count(*) FROM documents GROUP BY status"')
+    print(
+        '   • PII:    docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT entity_type, count(*) FROM pii_detections GROUP BY entity_type"'
+    )
+    print(
+        '   • Status: docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT status, count(*) FROM documents GROUP BY status"'
+    )
 
 
 if __name__ == "__main__":

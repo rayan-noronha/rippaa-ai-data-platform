@@ -8,13 +8,12 @@ Can be run as a standalone worker or called from a script.
 
 import json
 import signal
-import sys
 
 import structlog
 from confluent_kafka import Consumer, KafkaError
 
-from src.shared.config import get_settings
 from src.processing.pipeline import process_document
+from src.shared.config import get_settings
 
 logger = structlog.get_logger(__name__)
 
@@ -32,13 +31,15 @@ def _signal_handler(signum: int, frame: object) -> None:
 def create_consumer() -> Consumer:
     """Create a Kafka consumer for the raw-documents topic."""
     settings = get_settings()
-    return Consumer({
-        "bootstrap.servers": settings.kafka_bootstrap_servers,
-        "group.id": settings.kafka_consumer_group,
-        "auto.offset.reset": "earliest",
-        "enable.auto.commit": True,
-        "auto.commit.interval.ms": 5000,
-    })
+    return Consumer(
+        {
+            "bootstrap.servers": settings.kafka_bootstrap_servers,
+            "group.id": settings.kafka_consumer_group,
+            "auto.offset.reset": "earliest",
+            "enable.auto.commit": True,
+            "auto.commit.interval.ms": 5000,
+        }
+    )
 
 
 def consume_and_process(max_messages: int | None = None) -> list[dict]:

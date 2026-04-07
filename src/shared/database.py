@@ -2,6 +2,7 @@
 
 import structlog
 from sqlalchemy import create_engine, text
+from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session, sessionmaker
 
 from src.shared.config import get_settings
@@ -9,7 +10,7 @@ from src.shared.config import get_settings
 logger = structlog.get_logger(__name__)
 
 
-def get_engine() -> "Engine":
+def get_engine() -> Engine:
     """Create and return a SQLAlchemy engine."""
     settings = get_settings()
     engine = create_engine(

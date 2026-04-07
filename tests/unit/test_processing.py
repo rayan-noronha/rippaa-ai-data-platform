@@ -1,6 +1,7 @@
-"""Tests for text chunker."""
+"""Tests for text chunker and PII detector."""
 
 from src.processing.chunker import chunk_text
+from src.processing.pii_detector import PIIMatch, detect_pii, mask_text
 
 
 class TestChunkText:
@@ -57,11 +58,6 @@ class TestChunkText:
         text = "This is a test document."
         chunks = chunk_text(text, strategy="unknown_strategy")
         assert len(chunks) == 1
-
-
-"""Tests for PII detector."""
-
-from src.processing.pii_detector import detect_pii, mask_text, PIIMatch
 
 
 class TestDetectPII:
@@ -135,8 +131,22 @@ class TestMaskText:
         """Should mask multiple PII entities."""
         text = "Contact john@test.com or jane@test.com"
         matches = [
-            PIIMatch(entity_type="EMAIL", text="john@test.com", start=8, end=21, confidence=0.95, masked_text="[EMAIL_REDACTED]"),
-            PIIMatch(entity_type="EMAIL", text="jane@test.com", start=25, end=38, confidence=0.95, masked_text="[EMAIL_REDACTED]"),
+            PIIMatch(
+                entity_type="EMAIL",
+                text="john@test.com",
+                start=8,
+                end=21,
+                confidence=0.95,
+                masked_text="[EMAIL_REDACTED]",
+            ),
+            PIIMatch(
+                entity_type="EMAIL",
+                text="jane@test.com",
+                start=25,
+                end=38,
+                confidence=0.95,
+                masked_text="[EMAIL_REDACTED]",
+            ),
         ]
         result = mask_text(text, matches)
         assert "john@test.com" not in result

@@ -85,13 +85,15 @@ def _call_bedrock(
     settings = get_settings()
     client = boto3.client("bedrock-runtime", region_name=settings.aws_region)
 
-    body = json.dumps({
-        "anthropic_version": "bedrock-2023-05-31",
-        "max_tokens": max_tokens,
-        "temperature": temperature,
-        "system": system_prompt,
-        "messages": [{"role": "user", "content": user_message}],
-    })
+    body = json.dumps(
+        {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "system": system_prompt,
+            "messages": [{"role": "user", "content": user_message}],
+        }
+    )
 
     response = client.invoke_model(
         modelId=settings.llm_model_id,
@@ -122,12 +124,14 @@ def _call_mock(
     logger.info("LLM call (mock mode — no API key configured)")
 
     if "query understanding" in system_prompt.lower():
-        return json.dumps({
-            "intent": "information_retrieval",
-            "rewritten_query": user_message,
-            "search_strategy": "hybrid",
-            "key_terms": user_message.split()[:5],
-        })
+        return json.dumps(
+            {
+                "intent": "information_retrieval",
+                "rewritten_query": user_message,
+                "search_strategy": "hybrid",
+                "key_terms": user_message.split()[:5],
+            }
+        )
 
     elif "synthesise" in system_prompt.lower() or "synthesis" in system_prompt.lower():
         return (
@@ -138,12 +142,14 @@ def _call_mock(
         )
 
     elif "data quality" in system_prompt.lower():
-        return json.dumps({
-            "quality_issues": [],
-            "stale_documents": [],
-            "conflicts": [],
-            "overall_quality": "acceptable",
-        })
+        return json.dumps(
+            {
+                "quality_issues": [],
+                "stale_documents": [],
+                "conflicts": [],
+                "overall_quality": "acceptable",
+            }
+        )
 
     else:
         return "Mock LLM response. Configure RIPPAA_ANTHROPIC_API_KEY in .env for real responses."

@@ -7,7 +7,7 @@ ranked, relevant chunks from pgvector.
 
 import structlog
 
-from src.agents.tools.search import hybrid_search, vector_search, keyword_search
+from src.agents.tools.search import hybrid_search, keyword_search, vector_search
 
 logger = structlog.get_logger(__name__)
 

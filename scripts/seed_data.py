@@ -21,9 +21,7 @@ Usage:
 import argparse
 import csv
 import json
-import os
 import random
-import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from uuid import uuid4
@@ -86,8 +84,8 @@ def generate_insurance_policy(doc_id: int) -> dict:
 
 POLICY DOCUMENT
 Policy Number: {insurer[:3].upper()}-{random.randint(100000, 999999)}
-Effective Date: {effective_date.strftime('%d/%m/%Y')}
-Expiry Date: {expiry_date.strftime('%d/%m/%Y')}
+Effective Date: {effective_date.strftime("%d/%m/%Y")}
+Expiry Date: {expiry_date.strftime("%d/%m/%Y")}
 
 POLICYHOLDER DETAILS
 Name: {policyholder}
@@ -136,7 +134,7 @@ SECTION 4: PREMIUM
 Annual premium: ${random.randint(800, 3500):,}.{random.randint(0, 99):02d}
 Government charges: ${random.randint(50, 200):,}.{random.randint(0, 99):02d}
 GST: Included
-Payment frequency: {random.choice(['Annual', 'Monthly', 'Quarterly'])}
+Payment frequency: {random.choice(["Annual", "Monthly", "Quarterly"])}
 
 This policy is underwritten by {insurer} ABN {generate_abn()}.
 Australian Financial Services Licence No. {random.randint(200000, 500000)}.
@@ -168,7 +166,7 @@ def generate_claims_report(doc_id: int) -> dict:
     claim_types = ["Property Damage", "Theft", "Water Damage", "Storm Damage", "Fire", "Liability", "Motor Accident"]
     statuses = ["Open", "Under Assessment", "Approved", "Paid", "Declined", "Withdrawn"]
 
-    for i in range(num_claims):
+    for _i in range(num_claims):
         claim_date = fake.date_between(start_date="-2y", end_date="today")
         settlement_date = claim_date + timedelta(days=random.randint(7, 120)) if random.random() > 0.3 else None
 
@@ -184,7 +182,9 @@ def generate_claims_report(doc_id: int) -> dict:
             "claimed_amount": round(random.uniform(500, 75000), 2),
             "assessed_amount": round(random.uniform(200, 60000), 2) if random.random() > 0.2 else "",
             "status": random.choice(statuses),
-            "settlement_date": settlement_date.strftime("%m-%d-%Y") if settlement_date else "",  # Intentional format inconsistency: MM-DD-YYYY vs DD/MM/YYYY
+            "settlement_date": settlement_date.strftime("%m-%d-%Y")
+            if settlement_date
+            else "",  # Intentional format inconsistency: MM-DD-YYYY vs DD/MM/YYYY
             "assessor": fake.name() if random.random() > 0.15 else "",  # Intentional missing field
         }
 
@@ -226,7 +226,7 @@ def generate_underwriting_guidelines(doc_id: int) -> dict:
     content = f"""
 UNDERWRITING GUIDELINES — {risk_category}
 Version: {random.randint(1, 5)}.{random.randint(0, 9)}
-Last Updated: {fake.date_between(start_date='-2y', end_date='today').strftime('%d %B %Y')}
+Last Updated: {fake.date_between(start_date="-2y", end_date="today").strftime("%d %B %Y")}
 Classification: INTERNAL — CONFIDENTIAL
 
 1. RISK ASSESSMENT CRITERIA
@@ -306,7 +306,9 @@ ABN: {generate_abn()}
 def generate_compliance_report(doc_id: int) -> dict:
     """Generate a synthetic APRA compliance report."""
     reporting_period = f"Q{random.randint(1, 4)} {random.randint(2024, 2025)}"
-    entity = random.choice(["Adelaide Mutual Insurance", "Southern Cross Financial", "Pacific Re", "Coastal Underwriters"])
+    entity = random.choice(
+        ["Adelaide Mutual Insurance", "Southern Cross Financial", "Pacific Re", "Coastal Underwriters"]
+    )
     abn = generate_abn()
 
     content = f"""
@@ -317,7 +319,7 @@ Reporting Entity: {entity}
 ABN: {abn}
 APRA Registration: INS-{random.randint(10000, 99999)}
 Reporting Period: {reporting_period}
-Submitted: {fake.date_between(start_date='-6m', end_date='today').strftime('%d/%m/%Y')}
+Submitted: {fake.date_between(start_date="-6m", end_date="today").strftime("%d/%m/%Y")}
 Prepared by: {fake.name()} — Chief Risk Officer
 Contact: {fake.email()}
 
@@ -331,11 +333,11 @@ Status: COMPLIANT
 
 2. RISK MANAGEMENT (CPS 220)
 
-Risk Management Framework: Reviewed {fake.date_between(start_date='-1y', end_date='today').strftime('%B %Y')}
+Risk Management Framework: Reviewed {fake.date_between(start_date="-1y", end_date="today").strftime("%B %Y")}
 Key risks identified:
-- Cyber security threats (rating: {random.choice(['High', 'Medium', 'Low'])})
-- Climate-related financial risks (rating: {random.choice(['High', 'Medium'])})
-- Concentration risk in residential property portfolio (rating: {random.choice(['Medium', 'Low'])})
+- Cyber security threats (rating: {random.choice(["High", "Medium", "Low"])})
+- Climate-related financial risks (rating: {random.choice(["High", "Medium"])})
+- Concentration risk in residential property portfolio (rating: {random.choice(["Medium", "Low"])})
 
 Board Risk Committee meetings held: {random.randint(4, 12)}
 Risk appetite breaches: {random.randint(0, 3)}
@@ -344,7 +346,7 @@ Risk appetite breaches: {random.randint(0, 3)}
 
 Information security incidents reported: {random.randint(0, 5)}
 Critical vulnerabilities identified: {random.randint(0, 2)}
-Penetration testing completed: {random.choice(['Yes', 'No', 'In Progress'])}
+Penetration testing completed: {random.choice(["Yes", "No", "In Progress"])}
 Third-party security assessments: {random.randint(1, 4)} completed
 
 4. GOVERNANCE (CPS 510)
@@ -361,7 +363,7 @@ Conflict of interest declarations: Up to date
 
 Material outsourcing arrangements: {random.randint(2, 8)}
 Offshore arrangements: {random.randint(0, 3)}
-All arrangements within risk appetite: {random.choice(['Yes', 'No — remediation plan in place'])}
+All arrangements within risk appetite: {random.choice(["Yes", "No — remediation plan in place"])}
 
 6. DECLARATION
 
@@ -369,7 +371,7 @@ I, {fake.name()}, CEO of {entity}, declare that to the best of my knowledge,
 the information contained in this report is accurate and complete.
 
 Signed: [Digital signature]
-Date: {fake.date_between(start_date='-1m', end_date='today').strftime('%d/%m/%Y')}
+Date: {fake.date_between(start_date="-1m", end_date="today").strftime("%d/%m/%Y")}
 
 Medicare Number on file for CEO verification: {generate_medicare()}
 """
@@ -394,21 +396,23 @@ def generate_risk_assessment(doc_id: int) -> dict:
     categories = ["Operational", "Credit", "Market", "Liquidity", "Cyber", "Climate"]
 
     risks = []
-    for i in range(random.randint(5, 12)):
+    for _i in range(random.randint(5, 12)):
         category = random.choice(categories)
-        risks.append({
-            "risk_id": f"RSK-{random.randint(1000, 9999)}",
-            "category": category,
-            "description": fake.sentence(nb_words=10),
-            "likelihood": random.choice(["Rare", "Unlikely", "Possible", "Likely", "Almost Certain"]),
-            "impact": random.choice(["Insignificant", "Minor", "Moderate", "Major", "Catastrophic"]),
-            "risk_rating": random.choice(["Low", "Medium", "High", "Critical"]),
-            "owner": fake.name(),  # Intentional PII
-            "owner_email": fake.email(),  # Intentional PII
-            "mitigation": fake.sentence(nb_words=8),
-            "review_date": fake.date_between(start_date="-6m", end_date="+6m").isoformat(),
-            "status": random.choice(["Open", "Mitigated", "Accepted", "Transferred"]),
-        })
+        risks.append(
+            {
+                "risk_id": f"RSK-{random.randint(1000, 9999)}",
+                "category": category,
+                "description": fake.sentence(nb_words=10),
+                "likelihood": random.choice(["Rare", "Unlikely", "Possible", "Likely", "Almost Certain"]),
+                "impact": random.choice(["Insignificant", "Minor", "Moderate", "Major", "Catastrophic"]),
+                "risk_rating": random.choice(["Low", "Medium", "High", "Critical"]),
+                "owner": fake.name(),  # Intentional PII
+                "owner_email": fake.email(),  # Intentional PII
+                "mitigation": fake.sentence(nb_words=8),
+                "review_date": fake.date_between(start_date="-6m", end_date="+6m").isoformat(),
+                "status": random.choice(["Open", "Mitigated", "Accepted", "Transferred"]),
+            }
+        )
 
     return {
         "id": str(uuid4()),
@@ -473,9 +477,9 @@ COUNCIL POLICY
 Policy Title: {policy_area}
 Policy Number: CP-{random.randint(100, 999)}
 Version: {random.randint(1, 4)}.{random.randint(0, 5)}
-Approval Date: {approval_date.strftime('%d %B %Y')}
-Next Review Date: {next_review.strftime('%d %B %Y')}
-Responsible Officer: {fake.name()}, {random.choice(['Director Corporate Services', 'Director Community Services', 'Director Infrastructure', 'Manager Governance'])}
+Approval Date: {approval_date.strftime("%d %B %Y")}
+Next Review Date: {next_review.strftime("%d %B %Y")}
+Responsible Officer: {fake.name()}, {random.choice(["Director Corporate Services", "Director Community Services", "Director Infrastructure", "Manager Governance"])}
 Contact: {fake.email()}
 Phone: 08 8406 {random.randint(1000, 9999)}
 {review_note}
@@ -506,7 +510,7 @@ value to our community and meets all legislative requirements.
 
 3.3 Financial delegations apply as per Council's Financial Delegations Register.
 Expenditure above ${random.choice([10000, 25000, 50000, 100000]):,} requires
-{random.choice(['Manager', 'Director', 'CEO', 'Council'])} approval.
+{random.choice(["Manager", "Director", "CEO", "Council"])} approval.
 
 4. RESPONSIBILITIES
 
@@ -557,12 +561,19 @@ def generate_procurement_record(doc_id: int) -> dict:
     records = []
 
     vendors = [
-        "SA Power Networks", "Veolia Environmental", "Downer Group",
-        "Fulton Hogan", "BMD Group", "McConnell Dowell",
-        "Cardno (now Stantec)", "GHD", "AECOM", "Jacobs",
+        "SA Power Networks",
+        "Veolia Environmental",
+        "Downer Group",
+        "Fulton Hogan",
+        "BMD Group",
+        "McConnell Dowell",
+        "Cardno (now Stantec)",
+        "GHD",
+        "AECOM",
+        "Jacobs",
     ]
 
-    for i in range(num_records):
+    for _i in range(num_records):
         award_date = fake.date_between(start_date="-2y", end_date="today")
         value = round(random.uniform(5000, 2000000), 2)
 
@@ -571,11 +582,17 @@ def generate_procurement_record(doc_id: int) -> dict:
             "vendor": random.choice(vendors),
             "vendor_abn": generate_abn(),  # Intentional: ABN is not PII but is sensitive business data
             "description": fake.sentence(nb_words=8),
-            "category": random.choice(["Infrastructure", "IT Services", "Professional Services", "Maintenance", "Waste Management"]),
+            "category": random.choice(
+                ["Infrastructure", "IT Services", "Professional Services", "Maintenance", "Waste Management"]
+            ),
             "contract_value": value,
             "award_date": award_date.strftime("%d/%m/%Y"),
-            "end_date": (award_date + timedelta(days=random.randint(90, 1095))).strftime("%Y-%m-%d"),  # Intentional format inconsistency
-            "procurement_method": random.choice(["Open Tender", "Select Tender", "Direct Negotiation", "Panel Contract"]),
+            "end_date": (award_date + timedelta(days=random.randint(90, 1095))).strftime(
+                "%Y-%m-%d"
+            ),  # Intentional format inconsistency
+            "procurement_method": random.choice(
+                ["Open Tender", "Select Tender", "Direct Negotiation", "Panel Contract"]
+            ),
             "approved_by": fake.name(),
         }
 
@@ -622,7 +639,7 @@ HUMAN RESOURCES POLICY
 
 Policy: {policy_name}
 Document ID: HR-{random.randint(100, 999)}
-Effective Date: {fake.date_between(start_date='-2y', end_date='today').strftime('%d %B %Y')}
+Effective Date: {fake.date_between(start_date="-2y", end_date="today").strftime("%d %B %Y")}
 Version: {random.randint(1, 3)}.{random.randint(0, 5)}
 Owner: {fake.name()}, Head of People & Culture
 Email: {fake.email()}
@@ -652,7 +669,7 @@ with this policy. Non-compliance may result in disciplinary action up to
 and including termination.
 
 3.3 Any questions regarding this policy should be directed to the
-People & Culture team at hr@{company.lower().replace(' ', '')}.com.au
+People & Culture team at hr@{company.lower().replace(" ", "")}.com.au
 
 4. RELATED POLICIES
 
@@ -665,8 +682,8 @@ People & Culture team at hr@{company.lower().replace(' ', '')}.com.au
 
 | Version | Date | Author | Changes |
 |---|---|---|---|
-| 1.0 | {fake.date_between(start_date='-3y', end_date='-2y').strftime('%d/%m/%Y')} | {fake.name()} | Initial release |
-| 2.0 | {fake.date_between(start_date='-1y', end_date='today').strftime('%d/%m/%Y')} | {fake.name()} | Annual review update |
+| 1.0 | {fake.date_between(start_date="-3y", end_date="-2y").strftime("%d/%m/%Y")} | {fake.name()} | Initial release |
+| 2.0 | {fake.date_between(start_date="-1y", end_date="today").strftime("%d/%m/%Y")} | {fake.name()} | Annual review update |
 
 ABN: {generate_abn()}
 """
@@ -691,29 +708,35 @@ def generate_it_security_doc(doc_id: int) -> dict:
     assessment_date = fake.date_between(start_date="-6m", end_date="today")
 
     findings = []
-    for i in range(random.randint(4, 10)):
-        findings.append({
-            "finding_id": f"SEC-{random.randint(1000, 9999)}",
-            "severity": random.choice(["Critical", "High", "Medium", "Low", "Informational"]),
-            "title": random.choice([
-                "Unpatched production servers",
-                "Weak password policy enforcement",
-                "Missing MFA on admin accounts",
-                "Excessive IAM permissions",
-                "Unencrypted data at rest",
-                "Missing WAF configuration",
-                "Outdated SSL certificates",
-                "Insufficient logging and monitoring",
-                "Open S3 bucket detected",
-                "No network segmentation between environments",
-            ]),
-            "description": fake.paragraph(nb_sentences=2),
-            "affected_system": random.choice(["AWS Production", "Azure DevTest", "Corporate Network", "SaaS Applications", "Database Tier"]),
-            "remediation": fake.sentence(nb_words=10),
-            "status": random.choice(["Open", "In Progress", "Remediated", "Accepted Risk"]),
-            "assigned_to": fake.name(),
-            "assigned_email": fake.email(),  # Intentional PII
-        })
+    for _i in range(random.randint(4, 10)):
+        findings.append(
+            {
+                "finding_id": f"SEC-{random.randint(1000, 9999)}",
+                "severity": random.choice(["Critical", "High", "Medium", "Low", "Informational"]),
+                "title": random.choice(
+                    [
+                        "Unpatched production servers",
+                        "Weak password policy enforcement",
+                        "Missing MFA on admin accounts",
+                        "Excessive IAM permissions",
+                        "Unencrypted data at rest",
+                        "Missing WAF configuration",
+                        "Outdated SSL certificates",
+                        "Insufficient logging and monitoring",
+                        "Open S3 bucket detected",
+                        "No network segmentation between environments",
+                    ]
+                ),
+                "description": fake.paragraph(nb_sentences=2),
+                "affected_system": random.choice(
+                    ["AWS Production", "Azure DevTest", "Corporate Network", "SaaS Applications", "Database Tier"]
+                ),
+                "remediation": fake.sentence(nb_words=10),
+                "status": random.choice(["Open", "In Progress", "Remediated", "Accepted Risk"]),
+                "assigned_to": fake.name(),
+                "assigned_email": fake.email(),  # Intentional PII
+            }
+        )
 
     return {
         "id": str(uuid4()),
@@ -787,7 +810,7 @@ def generate_conflicting_document(doc_id: int) -> dict:
 RAA INSURANCE — PRODUCT UPDATE BULLETIN
 
 Bulletin No: PUB-{random.randint(100, 999)}
-Date: {fake.date_between(start_date='-6m', end_date='today').strftime('%d %B %Y')}
+Date: {fake.date_between(start_date="-6m", end_date="today").strftime("%d %B %Y")}
 Distribution: All Underwriters, All Brokers
 
 SUBJECT: Updated Coverage Limits — Residential Property
@@ -923,7 +946,7 @@ def generate_all_documents(output_dir: Path) -> list[dict]:
         for generator_fn, count in generators:
             for _ in range(count):
                 doc = generator_fn(doc_id)
-                filepath = write_document(doc, output_dir)
+                write_document(doc, output_dir)
                 documents.append(doc)
                 domain_count += 1
                 doc_id += 1
@@ -935,7 +958,7 @@ def generate_all_documents(output_dir: Path) -> list[dict]:
         duplicate = documents[0].copy()
         duplicate["id"] = str(uuid4())
         duplicate["filename"] = "DUPLICATE_" + duplicate["filename"]
-        filepath = write_document(duplicate, output_dir)
+        write_document(duplicate, output_dir)
         documents.append(duplicate)
 
     print(f"\n✅ Total: {len(documents)} documents generated")
@@ -943,15 +966,15 @@ def generate_all_documents(output_dir: Path) -> list[dict]:
 
     # Print data quality summary
     pii_types = ["names", "emails", "phone numbers", "ABNs", "Medicare numbers"]
-    print(f"\n🔍 Intentional data quality issues included:")
+    print("\n🔍 Intentional data quality issues included:")
     print(f"   • PII leakage: {', '.join(pii_types)}")
-    print(f"   • 1 exact duplicate document")
-    print(f"   • 1 duplicate claim row (in CSV)")
-    print(f"   • 2 malformed CSV files")
-    print(f"   • 2 conflicting documents (coverage limits)")
-    print(f"   • ~15% stale government policies (pre-2022)")
-    print(f"   • Mixed date formats (DD/MM/YYYY vs MM-DD-YYYY vs YYYY-MM-DD)")
-    print(f"   • Missing field values (~5-8% of rows)")
+    print("   • 1 exact duplicate document")
+    print("   • 1 duplicate claim row (in CSV)")
+    print("   • 2 malformed CSV files")
+    print("   • 2 conflicting documents (coverage limits)")
+    print("   • ~15% stale government policies (pre-2022)")
+    print("   • Mixed date formats (DD/MM/YYYY vs MM-DD-YYYY vs YYYY-MM-DD)")
+    print("   • Missing field values (~5-8% of rows)")
 
     return documents
 
@@ -971,12 +994,14 @@ def generate_manifest(documents: list[dict], output_dir: Path) -> None:
         ftype = doc["file_type"]
         manifest["by_domain"][domain] = manifest["by_domain"].get(domain, 0) + 1
         manifest["by_type"][ftype] = manifest["by_type"].get(ftype, 0) + 1
-        manifest["documents"].append({
-            "id": doc["id"],
-            "filename": doc["filename"],
-            "source_domain": doc["source_domain"],
-            "file_type": doc["file_type"],
-        })
+        manifest["documents"].append(
+            {
+                "id": doc["id"],
+                "filename": doc["filename"],
+                "source_domain": doc["source_domain"],
+                "file_type": doc["file_type"],
+            }
+        )
 
     manifest_path = output_dir / "manifest.json"
     with open(manifest_path, "w", encoding="utf-8") as f:
@@ -988,7 +1013,9 @@ def generate_manifest(documents: list[dict], output_dir: Path) -> None:
 def main() -> None:
     """Generate synthetic documents and save to output directory."""
     parser = argparse.ArgumentParser(description="Generate synthetic test documents for RIPPAA AI Data Platform")
-    parser.add_argument("--output-dir", type=str, default="data/synthetic", help="Output directory for generated documents")
+    parser.add_argument(
+        "--output-dir", type=str, default="data/synthetic", help="Output directory for generated documents"
+    )
     args = parser.parse_args()
 
     output_path = Path(args.output_dir)
@@ -996,6 +1023,7 @@ def main() -> None:
     # Clean previous run
     if output_path.exists():
         import shutil
+
         shutil.rmtree(output_path)
 
     output_path.mkdir(parents=True, exist_ok=True)

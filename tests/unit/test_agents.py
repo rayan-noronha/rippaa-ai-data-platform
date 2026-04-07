@@ -70,7 +70,12 @@ class TestSynthesisAgent:
 
     def test_synthesise_empty_chunks(self) -> None:
         """Should handle empty chunks gracefully."""
-        quality = {"overall_quality": "poor", "quality_issues": ["No relevant sources found"], "conflicts": [], "recommendation": "Proceed"}
+        quality = {
+            "overall_quality": "poor",
+            "quality_issues": ["No relevant sources found"],
+            "conflicts": [],
+            "recommendation": "Proceed",
+        }
         understanding = {"intent": "information_retrieval"}
 
         result = synthesise_answer(

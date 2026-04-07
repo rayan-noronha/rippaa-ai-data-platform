@@ -1,8 +1,8 @@
 """RIPPAA AI Data Platform — FastAPI application."""
 
 import time
+from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator
 
 import structlog
 from fastapi import FastAPI, Request
@@ -11,11 +11,11 @@ from prometheus_client import Counter, Histogram, generate_latest
 from sqlalchemy import text
 from starlette.responses import Response
 
+from src.ingestion.kafka_producer import check_kafka_health
+from src.ingestion.s3_client import check_s3_health
 from src.shared.config import get_settings
 from src.shared.database import check_database_health, get_engine
 from src.shared.models import HealthResponse, QueryRequest
-from src.ingestion.s3_client import check_s3_health
-from src.ingestion.kafka_producer import check_kafka_health
 
 logger = structlog.get_logger(__name__)
 

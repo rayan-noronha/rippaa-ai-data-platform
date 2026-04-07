@@ -1,7 +1,7 @@
 """S3 client for uploading documents to the landing bucket."""
 
-import structlog
 import boto3
+import structlog
 from botocore.exceptions import ClientError
 
 from src.shared.config import get_settings

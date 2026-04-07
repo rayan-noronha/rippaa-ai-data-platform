@@ -1,16 +1,15 @@
 """Domain models for the RIPPAA AI Data Platform."""
 
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
 from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field
 
-
 # ── Enums ────────────────────────────────────────
 
 
-class DocumentStatus(str, Enum):
+class DocumentStatus(StrEnum):
     """Lifecycle status of an ingested document."""
 
     INGESTED = "ingested"
@@ -19,7 +18,7 @@ class DocumentStatus(str, Enum):
     FAILED = "failed"
 
 
-class SourceDomain(str, Enum):
+class SourceDomain(StrEnum):
     """Industry domain of the source document."""
 
     INSURANCE = "insurance"
@@ -28,7 +27,7 @@ class SourceDomain(str, Enum):
     ENTERPRISE = "enterprise"
 
 
-class FileType(str, Enum):
+class FileType(StrEnum):
     """Supported file types for ingestion."""
 
     PDF = "pdf"
@@ -38,7 +37,7 @@ class FileType(str, Enum):
     DOCX = "docx"
 
 
-class ChunkStrategy(str, Enum):
+class ChunkStrategy(StrEnum):
     """Strategy used to split documents into chunks."""
 
     FIXED_SIZE = "fixed_size"
@@ -46,7 +45,7 @@ class ChunkStrategy(str, Enum):
     SLIDING_WINDOW = "sliding_window"
 
 
-class PIIEntityType(str, Enum):
+class PIIEntityType(StrEnum):
     """Types of PII entities detected."""
 
     PERSON = "PERSON"

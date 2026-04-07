@@ -27,13 +27,15 @@ def get_producer() -> Producer:
     global _producer
     if _producer is None:
         settings = get_settings()
-        _producer = Producer({
-            "bootstrap.servers": settings.kafka_bootstrap_servers,
-            "client.id": "rippaa-ingestion",
-            "acks": "all",  # Wait for all replicas to acknowledge
-            "retries": 3,
-            "retry.backoff.ms": 1000,
-        })
+        _producer = Producer(
+            {
+                "bootstrap.servers": settings.kafka_bootstrap_servers,
+                "client.id": "rippaa-ingestion",
+                "acks": "all",  # Wait for all replicas to acknowledge
+                "retries": 3,
+                "retry.backoff.ms": 1000,
+            }
+        )
         logger.info("Kafka producer created", servers=settings.kafka_bootstrap_servers)
     return _producer
 

@@ -7,7 +7,6 @@ gracefully without crashing the pipeline.
 import csv
 import io
 import json
-from pathlib import Path
 
 import structlog
 
@@ -41,7 +40,7 @@ def parse_document(content: str | bytes, file_type: str, filename: str) -> str:
             try:
                 content = content.decode("latin-1")
             except Exception as e:
-                raise ParseError(f"Cannot decode file {filename}: {e}")
+                raise ParseError(f"Cannot decode file {filename}: {e}") from e
 
     parser_map = {
         "txt": _parse_text,
@@ -68,7 +67,7 @@ def parse_document(content: str | bytes, file_type: str, filename: str) -> str:
     except ParseError:
         raise
     except Exception as e:
-        raise ParseError(f"Failed to parse {filename} ({file_type}): {e}")
+        raise ParseError(f"Failed to parse {filename} ({file_type}): {e}") from e
 
 
 def _parse_text(content: str, filename: str) -> str:
@@ -132,7 +131,7 @@ def _parse_json(content: str, filename: str) -> str:
     try:
         data = json.loads(content)
     except json.JSONDecodeError as e:
-        raise ParseError(f"Invalid JSON in {filename}: {e}")
+        raise ParseError(f"Invalid JSON in {filename}: {e}") from e
 
     text_parts = []
     _extract_json_text(data, text_parts, prefix="")
@@ -149,7 +148,5 @@ def _extract_json_text(data: object, parts: list[str], prefix: str) -> None:
         for i, item in enumerate(data):
             new_prefix = f"{prefix}[{i}]"
             _extract_json_text(item, parts, new_prefix)
-    elif isinstance(data, str) and data.strip():
-        parts.append(f"{prefix}: {data}")
-    elif isinstance(data, (int, float, bool)):
+    elif isinstance(data, str) and data.strip() or isinstance(data, (int, float, bool)):
         parts.append(f"{prefix}: {data}")

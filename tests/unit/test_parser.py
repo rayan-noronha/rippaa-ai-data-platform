@@ -2,7 +2,7 @@
 
 import pytest
 
-from src.processing.parser import parse_document, ParseError
+from src.processing.parser import ParseError, parse_document
 
 
 class TestParseText:

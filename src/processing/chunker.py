@@ -103,23 +103,20 @@ def _chunk_fixed_size(
         # Calculate end position
         end = start + chunk_size_chars
 
-        if end >= len(text):
-            # Last chunk — take everything remaining
-            end = len(text)
-        else:
-            # Try to find a clean break point
-            end = _find_break_point(text, start, end)
+        end = len(text) if end >= len(text) else _find_break_point(text, start, end)
 
         chunk_text = text[start:end].strip()
 
         if chunk_text:
-            chunks.append({
-                "chunk_index": chunk_index,
-                "chunk_text": chunk_text,
-                "token_count": _estimate_tokens(chunk_text),
-                "char_start": start,
-                "char_end": end,
-            })
+            chunks.append(
+                {
+                    "chunk_index": chunk_index,
+                    "chunk_text": chunk_text,
+                    "token_count": _estimate_tokens(chunk_text),
+                    "char_start": start,
+                    "char_end": end,
+                }
+            )
             chunk_index += 1
 
         # Move start forward, accounting for overlap
@@ -172,13 +169,15 @@ def _chunk_sliding_window(
         chunk_text = text[start:end].strip()
 
         if chunk_text:
-            chunks.append({
-                "chunk_index": chunk_index,
-                "chunk_text": chunk_text,
-                "token_count": _estimate_tokens(chunk_text),
-                "char_start": start,
-                "char_end": end,
-            })
+            chunks.append(
+                {
+                    "chunk_index": chunk_index,
+                    "chunk_text": chunk_text,
+                    "token_count": _estimate_tokens(chunk_text),
+                    "char_start": start,
+                    "char_end": end,
+                }
+            )
             chunk_index += 1
 
         start += step_chars
@@ -189,7 +188,7 @@ def _chunk_sliding_window(
             chunk_text = text[start:].strip()
             if chunk_text and chunks:
                 last = chunks[-1]
-                last["chunk_text"] = text[last["char_start"]:].strip()
+                last["chunk_text"] = text[last["char_start"] :].strip()
                 last["char_end"] = len(text)
                 last["token_count"] = _estimate_tokens(last["chunk_text"])
             break

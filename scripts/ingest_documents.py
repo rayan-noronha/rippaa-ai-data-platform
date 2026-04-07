@@ -8,7 +8,6 @@ Usage:
 """
 
 import argparse
-import sys
 import time
 
 from src.ingestion.service import ingest_directory
@@ -17,7 +16,9 @@ from src.ingestion.service import ingest_directory
 def main() -> None:
     """Run document ingestion."""
     parser = argparse.ArgumentParser(description="Ingest documents into RIPPAA AI Data Platform")
-    parser.add_argument("--data-dir", type=str, default="data/synthetic", help="Directory containing documents to ingest")
+    parser.add_argument(
+        "--data-dir", type=str, default="data/synthetic", help="Directory containing documents to ingest"
+    )
     args = parser.parse_args()
 
     print("🚀 RIPPAA AI Data Platform — Document Ingestion")
@@ -42,7 +43,9 @@ def main() -> None:
     print()
     print("📊 Next steps:")
     print("   • Check Kafka UI at http://localhost:8080 — look for messages in 'raw-documents' topic")
-    print("   • Query PostgreSQL: docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c \"SELECT count(*) FROM documents\"")
+    print(
+        '   • Query PostgreSQL: docker exec rippaa-postgres psql -U rippaa -d rippaa_platform -c "SELECT count(*) FROM documents"'
+    )
 
 
 if __name__ == "__main__":
