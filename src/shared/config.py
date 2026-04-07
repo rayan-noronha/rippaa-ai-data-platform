@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     pii_confidence_threshold: float = 0.7
 
     # ── API ──────────────────────────────────────
-    api_host: str = "0.0.0.0"
+    api_host: str = "0.0.0.0"  # nosec B104
     api_port: int = 8000
     api_rate_limit: int = 100  # requests per minute
 
