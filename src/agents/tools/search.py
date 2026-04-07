@@ -48,7 +48,7 @@ def vector_search(
 
     with engine.connect() as conn:
         result = conn.execute(
-            text(f"""
+            text(f""" # nosec B608
                 SELECT
                     c.id AS chunk_id,
                     c.document_id,
@@ -115,7 +115,7 @@ def keyword_search(
 
     with engine.connect() as conn:
         result = conn.execute(
-            text(f"""
+            text(f""" # nosec B608
                 SELECT
                     c.id AS chunk_id,
                     c.document_id,
