@@ -34,11 +34,12 @@ def parse_document(content: str | bytes, file_type: str, filename: str) -> str:
         ParseError: If the document cannot be parsed.
     """
     if isinstance(content, bytes):
+        raw_bytes = content
         try:
-            content = content.decode("utf-8")
+            content = raw_bytes.decode("utf-8")
         except UnicodeDecodeError:
             try:
-                content = content.decode("latin-1")
+                content = raw_bytes.decode("latin-1")
             except Exception as e:
                 raise ParseError(f"Cannot decode file {filename}: {e}") from e
 
@@ -133,7 +134,7 @@ def _parse_json(content: str, filename: str) -> str:
     except json.JSONDecodeError as e:
         raise ParseError(f"Invalid JSON in {filename}: {e}") from e
 
-    text_parts = []
+    text_parts: list[str] = []
     _extract_json_text(data, text_parts, prefix="")
     return "\n".join(text_parts)
 

@@ -1,10 +1,4 @@
-"""Kafka consumer for document processing.
-
-Consumes events from the 'raw-documents' topic and runs each
-document through the processing pipeline (parse → chunk → PII → embed → store).
-
-Can be run as a standalone worker or called from a script.
-"""
+"""Kafka consumer for document processing."""
 
 import json
 import signal
@@ -17,7 +11,6 @@ from src.shared.config import get_settings
 
 logger = structlog.get_logger(__name__)
 
-# Graceful shutdown flag
 _running = True
 
 
@@ -42,16 +35,8 @@ def create_consumer() -> Consumer:
     )
 
 
-def consume_and_process(max_messages: int | None = None) -> list[dict]:
-    """Consume documents from Kafka and process them.
-
-    Args:
-        max_messages: Maximum number of messages to process.
-                     None = run indefinitely until shutdown signal.
-
-    Returns:
-        List of processing results.
-    """
+def consume_and_process(max_messages: int | None = None) -> list[dict]:  # type: ignore[type-arg]
+    """Consume documents from Kafka and process them."""
     global _running
     _running = True
 
@@ -69,7 +54,6 @@ def consume_and_process(max_messages: int | None = None) -> list[dict]:
         max_messages=max_messages or "unlimited",
     )
 
-    # Register signal handlers for graceful shutdown
     signal.signal(signal.SIGINT, _signal_handler)
     signal.signal(signal.SIGTERM, _signal_handler)
 
@@ -83,27 +67,30 @@ def consume_and_process(max_messages: int | None = None) -> list[dict]:
 
             if msg is None:
                 if max_messages:
-                    # In bounded mode, no more messages = we're done
                     logger.info("No more messages in topic")
                     break
                 continue
 
-            if msg.error():
-                if msg.error().code() == KafkaError._PARTITION_EOF:
+            kafka_error = msg.error()
+            if kafka_error is not None:
+                if kafka_error.code() == KafkaError._PARTITION_EOF:
                     if max_messages:
                         break
                     continue
-                logger.error("Kafka consumer error", error=msg.error())
+                logger.error("Kafka consumer error", error=kafka_error)
                 continue
 
-            # Parse the message
+            raw_value = msg.value()
+            if raw_value is None:
+                logger.error("Received Kafka message with null value")
+                continue
+
             try:
-                event = json.loads(msg.value().decode("utf-8"))
+                event = json.loads(raw_value.decode("utf-8"))
             except (json.JSONDecodeError, UnicodeDecodeError) as e:
                 logger.error("Failed to parse Kafka message", error=str(e))
                 continue
 
-            # Process the document
             result = process_document(
                 document_id=event["document_id"],
                 filename=event["filename"],

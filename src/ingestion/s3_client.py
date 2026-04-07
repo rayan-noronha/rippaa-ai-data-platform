@@ -1,5 +1,7 @@
 """S3 client for uploading documents to the landing bucket."""
 
+from typing import Any
+
 import boto3
 import structlog
 from botocore.exceptions import ClientError
@@ -9,10 +11,10 @@ from src.shared.config import get_settings
 logger = structlog.get_logger(__name__)
 
 
-def get_s3_client():
+def get_s3_client() -> Any:
     """Create an S3 client pointing to LocalStack (dev) or real AWS (prod)."""
     settings = get_settings()
-    kwargs = {
+    kwargs: dict[str, Any] = {
         "service_name": "s3",
         "region_name": settings.aws_region,
     }
@@ -41,16 +43,7 @@ def upload_file_to_s3(
     bucket: str,
     s3_key: str,
 ) -> str:
-    """Upload a file to S3 and return the S3 key.
-
-    Args:
-        file_path: Local path to the file.
-        bucket: S3 bucket name.
-        s3_key: Destination key in S3.
-
-    Returns:
-        The S3 key where the file was uploaded.
-    """
+    """Upload a file to S3 and return the S3 key."""
     s3 = get_s3_client()
     s3.upload_file(file_path, bucket, s3_key)
     logger.info("Uploaded file to S3", bucket=bucket, key=s3_key)

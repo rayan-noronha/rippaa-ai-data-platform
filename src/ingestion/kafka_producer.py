@@ -1,6 +1,7 @@
 """Kafka producer for publishing document ingestion events."""
 
 import json
+from typing import Any
 from uuid import UUID
 
 import structlog
@@ -31,7 +32,7 @@ def get_producer() -> Producer:
             {
                 "bootstrap.servers": settings.kafka_bootstrap_servers,
                 "client.id": "rippaa-ingestion",
-                "acks": "all",  # Wait for all replicas to acknowledge
+                "acks": "all",
                 "retries": 3,
                 "retry.backoff.ms": 1000,
             }
@@ -58,7 +59,6 @@ def ensure_topics_exist() -> None:
         ),
     ]
 
-    # Check which topics already exist
     existing = admin.list_topics(timeout=10).topics
     new_topics = [t for t in topics if t.topic not in existing]
 
@@ -83,11 +83,7 @@ def publish_document_event(
     s3_key: str,
     file_size_bytes: int,
 ) -> None:
-    """Publish a document ingestion event to Kafka.
-
-    The message is keyed by document_id to ensure all events
-    for the same document go to the same partition (ordering guarantee).
-    """
+    """Publish a document ingestion event to Kafka."""
     settings = get_settings()
     producer = get_producer()
 
@@ -107,11 +103,10 @@ def publish_document_event(
         callback=_delivery_callback,
     )
 
-    # Flush to ensure the message is sent (in production, you'd batch these)
     producer.flush(timeout=10)
 
 
-def _delivery_callback(err: object, msg: object) -> None:
+def _delivery_callback(err: Any, msg: Any) -> None:
     """Callback for Kafka message delivery confirmation."""
     if err is not None:
         logger.error("Kafka delivery failed", error=str(err))

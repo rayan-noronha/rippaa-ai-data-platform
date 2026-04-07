@@ -8,17 +8,16 @@ Orchestrates the full processing flow for a single document:
 5. Generate embeddings
 6. Store chunks + embeddings in pgvector
 7. Log quality metrics
-
-Can be run as a Kafka consumer (consuming from raw-documents)
-or directly for a single document.
 """
 
 import json
 import time
+from typing import Any
 from uuid import uuid4
 
 import structlog
 from sqlalchemy import text
+from sqlalchemy.engine import Engine
 
 from src.ingestion.s3_client import get_s3_client
 from src.processing.chunker import chunk_text
@@ -37,19 +36,8 @@ def process_document(
     source_domain: str,
     file_type: str,
     s3_key: str,
-) -> dict:
-    """Process a single document through the full pipeline.
-
-    Args:
-        document_id: UUID of the document in the registry.
-        filename: Original filename.
-        source_domain: Industry domain.
-        file_type: File format.
-        s3_key: S3 key where the raw document is stored.
-
-    Returns:
-        Processing result with chunk count, PII detections, and status.
-    """
+) -> dict[str, Any]:
+    """Process a single document through the full pipeline."""
     settings = get_settings()
     engine = get_engine()
     start_time = time.time()
@@ -61,17 +49,12 @@ def process_document(
         domain=source_domain,
     )
 
-    # Update status to 'processing'
     _update_document_status(engine, document_id, "processing")
 
     try:
-        # Step 1: Download from S3
         raw_content = _download_from_s3(settings.s3_landing_bucket, s3_key)
-
-        # Step 2: Parse document
         parsed_text = parse_document(raw_content, file_type, filename)
 
-        # Step 3: Chunk text
         chunks = chunk_text(
             text=parsed_text,
             strategy="fixed_size",
@@ -82,9 +65,8 @@ def process_document(
         if not chunks:
             raise ParseError(f"No chunks generated from {filename}")
 
-        # Step 4: Detect PII in each chunk and mask it
         total_pii_detections = []
-        masked_chunks = []
+        masked_chunks: list[dict[str, Any]] = []
 
         for chunk in chunks:
             pii_matches = detect_pii(
@@ -92,7 +74,6 @@ def process_document(
                 confidence_threshold=settings.pii_confidence_threshold,
             )
 
-            # Mask the text
             masked_text = mask_text(chunk["chunk_text"], pii_matches)
 
             masked_chunks.append(
@@ -107,18 +88,14 @@ def process_document(
 
             total_pii_detections.extend(pii_matches)
 
-        # Step 5: Generate embeddings for masked text
         for chunk in masked_chunks:
             chunk["embedding"] = generate_embedding(chunk["chunk_text"])
 
-        # Step 6: Store in pgvector
         _store_chunks(engine, document_id, masked_chunks)
 
-        # Step 7: Log PII detections
         if total_pii_detections:
             _store_pii_detections(engine, document_id, masked_chunks)
 
-        # Step 8: Update document status and log quality metrics
         elapsed = time.time() - start_time
         _update_document_status(engine, document_id, "processed")
         _log_quality_metrics(
@@ -129,7 +106,7 @@ def process_document(
             elapsed_seconds=elapsed,
         )
 
-        result = {
+        result: dict[str, Any] = {
             "document_id": document_id,
             "filename": filename,
             "status": "processed",
@@ -138,11 +115,7 @@ def process_document(
             "elapsed_seconds": round(elapsed, 2),
         }
 
-        logger.info(
-            "Document processed successfully",
-            **result,
-        )
-
+        logger.info("Document processed successfully", **result)
         return result
 
     except Exception as e:
@@ -178,13 +151,13 @@ def _download_from_s3(bucket: str, s3_key: str) -> bytes:
     """Download a file from S3 and return its content."""
     s3 = get_s3_client()
     response = s3.get_object(Bucket=bucket, Key=s3_key)
-    content = response["Body"].read()
+    content: bytes = response["Body"].read()
     logger.debug("Downloaded from S3", bucket=bucket, key=s3_key, size=len(content))
     return content
 
 
 def _update_document_status(
-    engine: object,
+    engine: Engine,
     document_id: str,
     status: str,
     error_message: str | None = None,
@@ -221,7 +194,7 @@ def _update_document_status(
         conn.commit()
 
 
-def _store_chunks(engine: object, document_id: str, chunks: list[dict]) -> None:
+def _store_chunks(engine: Engine, document_id: str, chunks: list[dict[str, Any]]) -> None:
     """Store processed chunks with embeddings in pgvector."""
     with engine.connect() as conn:
         for chunk in chunks:
@@ -244,7 +217,7 @@ def _store_chunks(engine: object, document_id: str, chunks: list[dict]) -> None:
                     "token_count": chunk["token_count"],
                     "embedding": embedding_str,
                     "pii_detected": chunk["pii_detected"],
-                    "pii_masked": chunk["pii_detected"],  # If PII detected, it's been masked
+                    "pii_masked": chunk["pii_detected"],
                     "metadata": json.dumps(
                         {
                             "char_start": chunk["char_start"],
@@ -254,7 +227,6 @@ def _store_chunks(engine: object, document_id: str, chunks: list[dict]) -> None:
                 },
             )
 
-            # Store PII match references
             for match in chunk.get("pii_matches", []):
                 conn.execute(
                     text("""
@@ -279,13 +251,13 @@ def _store_chunks(engine: object, document_id: str, chunks: list[dict]) -> None:
     logger.info("Stored chunks in pgvector", document_id=document_id, chunk_count=len(chunks))
 
 
-def _store_pii_detections(engine: object, document_id: str, chunks: list[dict]) -> None:
+def _store_pii_detections(engine: Engine, document_id: str, chunks: list[dict[str, Any]]) -> None:
     """PII detections are stored inline with chunks in _store_chunks."""
-    pass  # Handled in _store_chunks
+    pass
 
 
 def _log_quality_metrics(
-    engine: object,
+    engine: Engine,
     document_id: str,
     chunks_count: int,
     pii_count: int,
@@ -294,7 +266,7 @@ def _log_quality_metrics(
 ) -> None:
     """Log processing quality metrics."""
     status = "pass" if error is None else "fail"
-    details = {
+    details: dict[str, Any] = {
         "chunks_created": chunks_count,
         "pii_detections": pii_count,
         "elapsed_seconds": round(elapsed_seconds, 2),

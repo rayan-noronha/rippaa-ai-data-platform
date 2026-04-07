@@ -10,6 +10,8 @@ Each chunk targets ~500 tokens (roughly 2000 characters) to balance:
 - Cost (fewer chunks = fewer embedding API calls)
 """
 
+from typing import Any
+
 import structlog
 
 logger = structlog.get_logger(__name__)
@@ -25,7 +27,7 @@ def chunk_text(
     strategy: str = "fixed_size",
     chunk_size_tokens: int = DEFAULT_CHUNK_SIZE_TOKENS,
     overlap_tokens: int = DEFAULT_OVERLAP_TOKENS,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     """Split text into chunks using the specified strategy.
 
     Args:
@@ -74,17 +76,12 @@ def _chunk_fixed_size(
     text: str,
     chunk_size_tokens: int,
     overlap_tokens: int,
-) -> list[dict]:
-    """Split text into fixed-size chunks with overlap.
-
-    Tries to split at sentence boundaries when possible,
-    falling back to word boundaries, then character boundaries.
-    """
+) -> list[dict[str, Any]]:
+    """Split text into fixed-size chunks with overlap."""
     chunk_size_chars = chunk_size_tokens * CHARS_PER_TOKEN
     overlap_chars = overlap_tokens * CHARS_PER_TOKEN
 
     if len(text) <= chunk_size_chars:
-        # Document fits in a single chunk
         return [
             {
                 "chunk_index": 0,
@@ -95,14 +92,12 @@ def _chunk_fixed_size(
             }
         ]
 
-    chunks = []
+    chunks: list[dict[str, Any]] = []
     start = 0
     chunk_index = 0
 
     while start < len(text):
-        # Calculate end position
         end = start + chunk_size_chars
-
         end = len(text) if end >= len(text) else _find_break_point(text, start, end)
 
         chunk_text = text[start:end].strip()
@@ -121,8 +116,8 @@ def _chunk_fixed_size(
 
         # Move start forward, accounting for overlap
         start = end - overlap_chars
-        if start <= chunks[-1]["char_start"] if chunks else 0:
-            # Prevent infinite loop if overlap is too large
+        last_start = int(chunks[-1]["char_start"]) if chunks else 0
+        if start <= last_start:
             start = end
 
     return chunks
@@ -132,12 +127,8 @@ def _chunk_sliding_window(
     text: str,
     chunk_size_tokens: int,
     overlap_tokens: int,
-) -> list[dict]:
-    """Split text using a sliding window approach.
-
-    Similar to fixed_size but ensures consistent overlap.
-    Better for documents where context spans chunk boundaries.
-    """
+) -> list[dict[str, Any]]:
+    """Split text using a sliding window approach."""
     chunk_size_chars = chunk_size_tokens * CHARS_PER_TOKEN
     step_chars = (chunk_size_tokens - overlap_tokens) * CHARS_PER_TOKEN
 
@@ -155,14 +146,13 @@ def _chunk_sliding_window(
             }
         ]
 
-    chunks = []
+    chunks: list[dict[str, Any]] = []
     chunk_index = 0
     start = 0
 
     while start < len(text):
         end = min(start + chunk_size_chars, len(text))
 
-        # Try to find a clean break if not at the end
         if end < len(text):
             end = _find_break_point(text, start, end)
 
@@ -182,60 +172,45 @@ def _chunk_sliding_window(
 
         start += step_chars
 
-        # Don't create a tiny final chunk
         if start < len(text) and (len(text) - start) < (chunk_size_chars // 4):
-            # Extend previous chunk to include the remainder
             chunk_text = text[start:].strip()
             if chunk_text and chunks:
                 last = chunks[-1]
-                last["chunk_text"] = text[last["char_start"] :].strip()
+                last_char_start = int(last["char_start"])
+                last["chunk_text"] = text[last_char_start:].strip()
                 last["char_end"] = len(text)
-                last["token_count"] = _estimate_tokens(last["chunk_text"])
+                last["token_count"] = _estimate_tokens(str(last["chunk_text"]))
             break
 
     return chunks
 
 
 def _find_break_point(text: str, start: int, end: int) -> int:
-    """Find the best break point near the target end position.
-
-    Priority: sentence boundary > paragraph boundary > word boundary > exact position.
-    Searches backwards from end position within a reasonable window.
-    """
+    """Find the best break point near the target end position."""
     search_window = min(200, (end - start) // 4)
     search_start = max(start, end - search_window)
     window = text[search_start:end]
 
-    # Try sentence boundaries (. ! ? followed by space or newline)
     for sep in [". ", ".\n", "! ", "!\n", "? ", "?\n"]:
         last_pos = window.rfind(sep)
         if last_pos != -1:
             return search_start + last_pos + len(sep)
 
-    # Try paragraph boundaries
     last_newline = window.rfind("\n\n")
     if last_newline != -1:
         return search_start + last_newline + 2
 
-    # Try single newline
     last_newline = window.rfind("\n")
     if last_newline != -1:
         return search_start + last_newline + 1
 
-    # Try word boundary (space)
     last_space = window.rfind(" ")
     if last_space != -1:
         return search_start + last_space + 1
 
-    # No good break point found — split at exact position
     return end
 
 
 def _estimate_tokens(text: str) -> int:
-    """Estimate token count from text length.
-
-    Uses the rough approximation of 4 characters per token.
-    For exact counts, use tiktoken — but this is sufficient
-    for chunking decisions.
-    """
+    """Estimate token count from text length."""
     return max(1, len(text) // CHARS_PER_TOKEN)

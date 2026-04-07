@@ -23,17 +23,7 @@ def call_llm(
     max_tokens: int = 2000,
     temperature: float = 0.0,
 ) -> str:
-    """Call the LLM and return the text response.
-
-    Args:
-        system_prompt: System instructions for the LLM.
-        user_message: The user's message/query.
-        max_tokens: Maximum tokens in the response.
-        temperature: Sampling temperature (0.0 = deterministic).
-
-    Returns:
-        The LLM's text response.
-    """
+    """Call the LLM and return the text response."""
     settings = get_settings()
 
     if settings.anthropic_api_key:
@@ -52,6 +42,7 @@ def _call_anthropic(
 ) -> str:
     """Call Claude via Anthropic API directly."""
     from anthropic import Anthropic
+    from anthropic.types import TextBlock
 
     settings = get_settings()
     client = Anthropic(api_key=settings.anthropic_api_key)
@@ -64,7 +55,8 @@ def _call_anthropic(
         messages=[{"role": "user", "content": user_message}],
     )
 
-    text = response.content[0].text
+    block = response.content[0]
+    text = block.text if isinstance(block, TextBlock) else ""
     logger.info(
         "LLM call complete (Anthropic)",
         input_tokens=response.usage.input_tokens,
@@ -116,11 +108,7 @@ def _call_mock(
     system_prompt: str,
     user_message: str,
 ) -> str:
-    """Return a structured mock response for testing without an API key.
-
-    Parses the system prompt to determine which agent is calling
-    and returns an appropriate mock response.
-    """
+    """Return a structured mock response for testing without an API key."""
     logger.info("LLM call (mock mode — no API key configured)")
 
     if "query understanding" in system_prompt.lower():

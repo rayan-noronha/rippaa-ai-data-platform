@@ -1,7 +1,7 @@
 """RIPPAA AI Data Platform — FastAPI application."""
 
 import time
-from collections.abc import AsyncGenerator
+from collections.abc import AsyncGenerator, Awaitable, Callable
 from contextlib import asynccontextmanager
 
 import structlog
@@ -19,7 +19,7 @@ from src.shared.models import HealthResponse, QueryRequest
 
 logger = structlog.get_logger(__name__)
 
-# ── Prometheus Metrics ───────────────────────────
+# ── Prometheus Metrics ───────────────────────────────────────
 
 REQUEST_COUNT = Counter(
     "rippaa_http_requests_total",
@@ -45,7 +45,7 @@ QUERIES_PROCESSED = Counter(
 )
 
 
-# ── Application Lifecycle ────────────────────────
+# ── Application Lifecycle ────────────────────────────────────
 
 
 @asynccontextmanager
@@ -57,7 +57,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     logger.info("Shutting down RIPPAA AI Data Platform")
 
 
-# ── App Factory ──────────────────────────────────
+# ── App Factory ──────────────────────────────────────────────
 
 settings = get_settings()
 
@@ -77,14 +77,17 @@ app.add_middleware(
 )
 
 
-# ── Middleware ────────────────────────────────────
+# ── Middleware ───────────────────────────────────────────────
 
 
 @app.middleware("http")
-async def metrics_middleware(request: Request, call_next: object) -> Response:
+async def metrics_middleware(
+    request: Request,
+    call_next: Callable[[Request], Awaitable[Response]],
+) -> Response:
     """Track request count and latency for Prometheus."""
     start_time = time.perf_counter()
-    response = await call_next(request)  # type: ignore[misc]
+    response = await call_next(request)
     latency = time.perf_counter() - start_time
 
     REQUEST_COUNT.labels(
@@ -98,10 +101,10 @@ async def metrics_middleware(request: Request, call_next: object) -> Response:
         endpoint=request.url.path,
     ).observe(latency)
 
-    return response  # type: ignore[return-value]
+    return response
 
 
-# ── Routes ───────────────────────────────────────
+# ── Routes ───────────────────────────────────────────────────
 
 
 @app.get("/health", response_model=HealthResponse)
@@ -147,15 +150,8 @@ async def ingest_document() -> dict[str, str]:
 
 
 @app.post("/query")
-async def query_knowledge_base(request: QueryRequest) -> dict:
-    """Query the knowledge base using agentic RAG.
-
-    Runs four agents in sequence:
-    1. Query Understanding — classifies intent, rewrites query
-    2. Retrieval — hybrid search across pgvector
-    3. Data Quality — validates sources
-    4. Synthesis — generates cited answer
-    """
+async def query_knowledge_base(request: QueryRequest) -> dict:  # type: ignore[type-arg]
+    """Query the knowledge base using agentic RAG."""
     from src.agents.orchestrator import run_query
 
     domains = [d.value for d in request.source_domains] if request.source_domains else None
@@ -172,7 +168,7 @@ async def query_knowledge_base(request: QueryRequest) -> dict:
 
 
 @app.get("/documents")
-async def list_documents() -> list[dict]:
+async def list_documents() -> list[dict]:  # type: ignore[type-arg]
     """List all ingested documents and their processing status."""
     engine = get_engine()
     with engine.connect() as conn:
