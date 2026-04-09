@@ -39,7 +39,7 @@ This platform provides an end-to-end pipeline that:
 │  SERVING            FastAPI on ECS Fargate + Prometheus/Grafana│
 └──────────────────────────────────────────────────────────────┘
 ```
-
+![RIPPAA AI Data Platform Architecture](docs/diagrams/rippaa-ai-data-platform-architecture.png)
 > Detailed C4 architecture diagrams available in [`docs/diagrams/`](docs/diagrams/)
 
 ## Live Demo
